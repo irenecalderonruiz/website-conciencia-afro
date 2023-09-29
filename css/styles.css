@@ -1,0 +1,276 @@
+/* Parametros */
+@font-face {
+        font-family: 'Casta-Thin';
+        src: url(../fonts/Casta-Thin.otf);
+    }
+
+@font-face {
+        font-family: 'Vercetti-Regular';
+        src: url(../fonts/Vercetti-Regular.ttf);
+    }
+
+
+/* Variables */
+:root {
+    /* Colores */
+    --afro-black: #181818;
+    --afro-yellow: #DEF716;
+    --afro-red: #D93100;
+    --afro-light-red: #DD6144; 
+
+
+    /* Valores comunes */
+    --height-header-mob: 48px;
+    --height-header-desk: 68px; 
+
+
+    /* Bordes */
+    --border: 2px solid var(--afro-black);
+
+    /* Tipografía */
+    --main-font: 'Franklin Gothic Heavy', 'Arial Narrow', Arial, sans-serif;
+    --secundary-font: 'Casta-Thin', sans-serif;
+    --text-font: 'Vercetti-Regular';
+
+}
+    
+/* Normalizadores (Hoja de estilos) */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: 2px dashed purple;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg-light-red {
+    background-color: #DD6144;
+}
+
+.bg-red {
+    background-color: var(--afro-red);
+}
+
+
+h1 {
+    font-family: var(--main-font);
+    font-size: 30px; 
+    color: var(--afro-black);
+    text-transform: uppercase;
+}
+
+h5 {
+    font-family: var(--secundary-font);
+    font-size: 26px; 
+}
+
+
+
+/* Reglas recursivas (elementos que se utilicen más de una vez pero no se puedan normalizar, ya que son un componente que tiene diferentes estilos en las diferentes aplicaciones. (botones, o por ejemplo quitar unos bordes... etc) */
+
+
+
+
+
+
+/* Reglas generales (marco, header, footer, nav (menú), ventana modal (pop up) */
+
+/* Header */
+header {
+    width: 100%;
+    height: var(--height-header-mob);
+    position: fixed; 
+    top: 0px;
+    z-index: 1999; 
+    background-color: var(--afro-yellow);
+    border-top: var(--border-top);
+    border-bottom: var(--border-bottom);
+    /*flex*/
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.logo {
+    width: 30px; 
+}
+
+header div {
+    width: 100%;
+    height: var(--height-header-mob); 
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 2000; 
+
+    /*flex*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div img {
+    padding: 10px;
+    margin-right: 10px;
+    width: 50px;    
+}
+
+.btn-menu {
+    font-family: var(--main-font);
+    color: var(--afro-black);
+    font-size: 20px;
+    padding: 12px;
+    border-left: var(--border-left);
+    transition: 2ms;
+}
+
+.btn-menu:hover {
+    color: var(--afro-yellow);
+    background-color: var(--afro-black);
+}
+/* Fin Header */
+
+/* Hero */
+
+.hero {
+    display: flex; 
+    flex-direction: column-reverse;
+}
+
+/* Sección con imagen */
+
+
+
+.section-img {
+    /* background-color: #DD6144; */
+    border-bottom: var(--border);
+    
+}
+
+.section-img img{
+    width: 100%; 
+    object-fit: contain;
+    /* padding: calc(60px + var(--height-header-mob)) 4% 60px 4%; */
+    padding-right: 4%;
+    padding-left: 4%; 
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Sección con texto */
+.section-text {
+    background-color: #D93100;
+    border-bottom: var(--border);
+    padding: calc(40px + var(--height-header-mob)) 4% 40px 4%; 
+
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.section-text h1{
+    order: 2; 
+    padding-top: 10px; 
+}
+
+.section-text h5{
+    order: 1; 
+}
+
+
+
+
+
+
+/* Reglas Especificas */
+
+
+
+/* Responsive */
+
+@media all and (min-width:1280px) {
+
+    /* Header Desk */
+        header {
+            height: var(--height-header-desk);  
+        }
+        
+        .logo {
+            width: 48px; 
+        }
+        
+        header div {
+            width: 100%;
+            height: var(--height-header-desk); 
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            margin: auto; 
+            z-index: 2000; 
+        
+            /*flex*/
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .btn-menu {
+            font-size: 36px;
+        }
+
+    /* Fin Header Desk */
+
+    /* Hero - Desk */
+    .hero {
+        /* height: calc(100vh + var(--height-header-desk)); */
+        height: 100vh; 
+        
+
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: row;
+
+        
+    }
+
+    /* Sección con imagen - Desk */
+    .section-img {
+        width: 50%;
+        height: 100%;
+        border-right: var(--border);
+
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; 
+    }
+    .section-img img{
+        width: 100%;
+        /* object-fit: contain; */
+        /* padding: calc(90px + var(--height-header-desk)) 4% 90px 4%; */
+        padding: 80px 4%;
+    }
+
+    /* Sección con texto - Desk */
+    .section-text {
+        width: 50%;
+        padding: 80px 4%;
+        
+        /*flex*/
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    
+    
+
+
+
+
+}
