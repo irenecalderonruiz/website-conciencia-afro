@@ -1,13 +1,23 @@
 /* Parametros */
 @font-face {
-        font-family: 'Casta-Thin';
-        src: url(../fonts/Casta-Thin.otf);
-    }
+    font-family: 'Casta-Thin';
+    src: url(../fonts/Casta-Thin.otf);
+}
 
 @font-face {
-        font-family: 'Vercetti-Regular';
-        src: url(../fonts/Vercetti-Regular.ttf);
-    }
+    font-family: 'Vercetti-Regular';
+    src: url(../fonts/Vercetti-Regular.ttf);
+}
+
+ @font-face {
+    font-family: 'Franklin-Gothic-Heavy';
+    src: url(../fonts/Franklin-Gothic-Heavy.TTF);
+}
+
+@font-face {
+    font-family: 'Gruppo-Regular';
+    src: url(../fonts/Gruppo-Regular.ttf);
+}
 
 
 /* Variables */
@@ -16,23 +26,38 @@
     --afro-black: #181818;
     --afro-yellow: #DEF716;
     --afro-red: #D93100;
-    --afro-light-red: #DD6144; 
+    --afro-light-red: #DD6144;
+    --afro-purple: #BC1A8F; 
+    --afro-light-purple: #BB7FB4; 
+    --afro-green: #89FC59; 
+    --afro-light-green: #A7D992;
 
 
     /* Valores comunes */
     --height-header-mob: 48px;
-    --height-header-desk: 68px; 
+    --height-header-desk: 68px;
+    --padding-between-text: 10px;
+    
+    --padding-sides: 4%; 
+    --padding-between-elements: 10%; 
+    
+    --padding-section: var(--padding-between-elements) var(--padding-sides);
+    --padding-hero-mob: calc(var(--padding-sides) + var(--height-header-mob)) var(--padding-sides) var(--padding-between-elements) var(--padding-sides);
+
+
 
 
     /* Bordes */
     --border: 2px solid var(--afro-black);
 
     /* Tipografía */
-    --main-font: 'Franklin Gothic Heavy', 'Arial Narrow', Arial, sans-serif;
-    --secundary-font: 'Casta-Thin', sans-serif;
+    --main-font: 'Franklin-Gothic-Heavy', 'Arial Narrow', Arial, sans-serif;
+    --secundary-font: 'Gruppo-Regular', sans-serif;
     --text-font: 'Vercetti-Regular';
 
 }
+
+
     
 /* Normalizadores (Hoja de estilos) */
 *{
@@ -42,29 +67,113 @@
     outline: 2px dashed purple;
 }
 
+body {
+    background-color: var(--afro-black); 
+}
+
 a {
     text-decoration: none;
+    cursor: url("../img/pointer.png"), pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Background color */
+.bg-red {
+    background-color: var(--afro-red);
 }
 
 .bg-light-red {
-    background-color: #DD6144;
+    background-color: var(--afro-light-red);
 }
 
-.bg-red {
-    background-color: var(--afro-red);
+.bg-purple {
+    background-color: var(--afro-purple);
+}
+
+.bg-light-purple {
+    background-color: var(--afro-light-purple);
+}
+
+/* Tipografía */
+
+p {
+    font-family: var(--text-font); 
+    font-size: 16px; 
 }
 
 
 h1 {
     font-family: var(--main-font);
     font-size: 30px; 
-    color: var(--afro-black);
     text-transform: uppercase;
+    line-height: 1em;
+}
+
+h2 {
+    font-family: var(--secundary-font);
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 0.8em;
+}
+
+h3 {
+    font-family: var(--secundary-font); 
+    font-size: 40px;
+}
+
+h4 {
+    font-family: var(--main-font);
+    font-size: 20px; 
+    text-transform: uppercase;
+    padding-bottom: 2%;
 }
 
 h5 {
     font-family: var(--secundary-font);
-    font-size: 26px; 
+    font-size: 26px;
+    line-height: 1em;
+} 
+
+h6{
+    font-family: var(--main-font);
+    font-size: 16px; 
+    text-transform: uppercase;
+}
+
+.big-text {
+    font-family: var(--secundary-font);
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 0.9em;
+}
+
+.item-menu {
+    font-family: var(--main-font); 
+    font-size: 24px; 
+    text-transform: uppercase;
+    color: var(--afro-yellow); 
+}
+
+/* Botón */
+
+.btn {
+    font-family: var(--main-font);
+    font-size: 16px; 
+    text-transform: uppercase;
+    color: var(--afro-black);
+    background-color: var(--afro-yellow);
+    border: var(--border);
+    border-radius: 100px;
+    padding: 2px 10px;     
+}
+
+.btn:hover {
+    color: var(--afro-yellow);
+    border-color: #000000;
+    background-color: var(--afro-black);
 }
 
 
@@ -86,8 +195,9 @@ header {
     top: 0px;
     z-index: 1999; 
     background-color: var(--afro-yellow);
-    border-top: var(--border-top);
-    border-bottom: var(--border-bottom);
+    border-top: var(--border);
+    border-bottom: var(--border);
+
     /*flex*/
     display: flex;
     justify-content: center;
@@ -98,6 +208,7 @@ header {
     width: 30px; 
 }
 
+/* Botón hamburguesa y Botón */
 header div {
     width: 100%;
     height: var(--height-header-mob); 
@@ -123,7 +234,7 @@ header div img {
     color: var(--afro-black);
     font-size: 20px;
     padding: 12px;
-    border-left: var(--border-left);
+    border-left: var(--border);
     transition: 2ms;
 }
 
@@ -140,34 +251,38 @@ header div img {
     flex-direction: column-reverse;
 }
 
+.hero > .section-text {
+    padding: var(--padding-hero-mob);
+}
+
+/* Componentes Comunes */
+
+.main-section {
+    display: flex; 
+    flex-direction: column-reverse;
+}
+
 /* Sección con imagen */
-
-
-
 .section-img {
-    /* background-color: #DD6144; */
     border-bottom: var(--border);
-    
+    padding: var(--padding-section);
 }
 
 .section-img img{
     width: 100%; 
     object-fit: contain;
-    /* padding: calc(60px + var(--height-header-mob)) 4% 60px 4%; */
-    padding-right: 4%;
-    padding-left: 4%; 
-    padding-top: 40px;
-    padding-bottom: 40px;
 }
 
 /* Sección con texto */
 .section-text {
-    background-color: #D93100;
+    color: var(--afro-black);
     border-bottom: var(--border);
-    padding: calc(40px + var(--height-header-mob)) 4% 40px 4%; 
-
+    padding: var(--padding-section);
+    
+     
+    /* Flex */
     display: flex; 
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
 .section-text h1{
@@ -179,6 +294,24 @@ header div img {
     order: 1; 
 }
 
+.section-text p {
+    font-family: var(--secundary-font);
+    font-size: 26px;
+    line-height: 1em;
+    padding-bottom: 6%;
+}
+
+
+/* Sección con fondo negro */
+
+.section-black {
+    color: var(--afro-yellow); 
+    padding: var(--padding-section);
+}
+
+.section-black h2, .section-black div {
+    padding-bottom: 4%;
+}
 
 
 
@@ -191,6 +324,53 @@ header div img {
 /* Responsive */
 
 @media all and (min-width:1280px) {
+
+    /* Tipografía */
+
+    p {
+        font-size: 20px;
+        line-height: 1.4em; 
+    }
+
+
+    h1 {
+        font-size: 46px; 
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 50px;
+    }
+
+    h4 {
+        font-size: 38px; 
+    }
+
+    h5 {
+        font-size: 32px;
+    } 
+
+    h6{
+        font-size: 20px; 
+    }
+
+    .big-text {
+        font-size: 100px;
+  
+    }
+
+    .item-menu {
+        font-size: 30px; 
+    }
+
+    /* Botón */
+
+    .btn {
+        font-size: 20px;
+    }
 
     /* Header Desk */
         header {
@@ -223,19 +403,17 @@ header div img {
     /* Fin Header Desk */
 
     /* Hero - Desk */
-    .hero {
-        /* height: calc(100vh + var(--height-header-desk)); */
-        height: 100vh; 
-        
-
+    .hero, .main-section {
+        height: calc(100vh --height-header-desk); 
+    
         /*flex*/
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: flex-end;
         flex-direction: row;
-
-        
     }
+
+
 
     /* Sección con imagen - Desk */
     .section-img {
@@ -248,17 +426,15 @@ header div img {
         justify-content: center;
         align-items: flex-end; 
     }
+
     .section-img img{
         width: 100%;
-        /* object-fit: contain; */
-        /* padding: calc(90px + var(--height-header-desk)) 4% 90px 4%; */
-        padding: 80px 4%;
+        
     }
 
     /* Sección con texto - Desk */
     .section-text {
         width: 50%;
-        padding: 80px 4%;
         
         /*flex*/
         display: flex;
@@ -267,8 +443,28 @@ header div img {
         flex-wrap: wrap;
     }
 
-    
-    
+    /* Sección fondo negro - Desk */
+   .section-black {
+        padding: 0px; 
+        /*flex*/
+        display: flex;
+        align-items: flex-end;
+    } 
+
+    .section-black div {
+        padding: var(--padding-section);
+        width: 50%;
+    }
+
+
+    .section-black div:nth-child(2) {
+        /* Estilos para el segundo div */
+        
+        
+        
+    }
+
+
 
 
 
