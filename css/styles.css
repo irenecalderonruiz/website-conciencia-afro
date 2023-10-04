@@ -1,17 +1,24 @@
 /* Parametros */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 @font-face {
     font-family: 'Casta-Thin';
     src: url(../fonts/Casta-Thin.otf);
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Vercetti-Regular';
     src: url(../fonts/Vercetti-Regular.ttf);
-}
+} */
 
- @font-face {
+@font-face {
     font-family: 'Franklin-Gothic-Heavy';
     src: url(../fonts/Franklin-Gothic-Heavy.TTF);
+}
+
+@font-face {
+    font-family: 'Franklin-Gothic-Book';
+    src: url(../fonts/Franklin-Gothic-Book.TTF);
 }
 
 @font-face {
@@ -42,7 +49,7 @@
     --padding-between-elements: 10%; 
     
     --padding-section: var(--padding-between-elements) var(--padding-sides);
-    --padding-hero-mob: calc(var(--padding-sides) + var(--height-header-mob)) var(--padding-sides) var(--padding-between-elements) var(--padding-sides);
+    --padding-hero-mob: calc(var(--padding-between-elements) + var(--height-header-mob)) var(--padding-sides) var(--padding-between-elements) var(--padding-sides);
 
 
 
@@ -52,8 +59,10 @@
 
     /* Tipografía */
     --main-font: 'Franklin-Gothic-Heavy', 'Arial Narrow', Arial, sans-serif;
+    --main-font-light: 'Franklin-Gothic-Book', Arial, sans-serif; 
     --secundary-font: 'Gruppo-Regular', sans-serif;
-    --text-font: 'Vercetti-Regular';
+    /* --text-font: 'Vercetti-Regular'; */
+    --text-font: 'Ubuntu', sans-serif;
 
 }
 
@@ -64,11 +73,12 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    outline: 2px dashed purple;
+    /* outline: 2px dashed purple; */
 }
 
 body {
     background-color: var(--afro-black); 
+    overflow-x: hidden;
 }
 
 a {
@@ -97,17 +107,23 @@ ul {
     background-color: var(--afro-light-purple);
 }
 
+.bg-yellow {
+    background-color: var(--afro-yellow);
+}
+
 /* Tipografía */
 
 p {
     font-family: var(--text-font); 
-    font-size: 16px; 
+    font-size: 16px;
+    padding-bottom: 10px;
+    line-height: 1.4em;
 }
 
 
 h1 {
     font-family: var(--main-font);
-    font-size: 30px; 
+    font-size: 1.8em; 
     text-transform: uppercase;
     line-height: 1em;
 }
@@ -174,6 +190,7 @@ h6{
     color: var(--afro-yellow);
     border-color: #000000;
     background-color: var(--afro-black);
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.30) inset;
 }
 
 
@@ -193,7 +210,7 @@ header {
     height: var(--height-header-mob);
     position: fixed; 
     top: 0px;
-    z-index: 1999; 
+    z-index: 2000; 
     background-color: var(--afro-yellow);
     border-top: var(--border);
     border-bottom: var(--border);
@@ -204,18 +221,29 @@ header {
     align-items: center;   
 }
 
+
+
 .logo {
-    width: 30px; 
+    /* Nota: Importante para que no haya conflicto en la lógica con el div del icono hamburguesa y botón */
+    z-index: 3000; 
 }
+
+
+.logo img {
+    width: 32px;
+    height: 100%;     
+} 
+
 
 /* Botón hamburguesa y Botón */
 header div {
     width: 100%;
     height: var(--height-header-mob); 
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 0px;
-    z-index: 2000; 
+    z-index: 1000;
+ 
 
     /*flex*/
     display: flex;
@@ -224,12 +252,14 @@ header div {
 }
 
 header div img {
+    height: 100%;
     padding: 10px;
     margin-right: 10px;
     width: 50px;    
 }
 
 .btn-menu {
+    height: 100%;
     font-family: var(--main-font);
     color: var(--afro-black);
     font-size: 20px;
@@ -243,6 +273,75 @@ header div img {
     background-color: var(--afro-black);
 }
 /* Fin Header */
+
+/* Footer */
+
+footer p {
+    font-family: var(--main-font-light);
+}
+.top-footer {
+    text-align: center;
+    padding: 10%; 
+    color: var(--afro-black); 
+}
+
+.top-footer img {
+    width: 20%;
+    padding-bottom: 40px;
+}
+
+.top-footer > div {
+    text-align: start; 
+}
+
+.top-footer p {
+    font-size: 18px;
+}
+
+.top-footer a {
+    font-family: var(--main-font);
+    color: var(--afro-black);
+}
+
+.top-footer a:hover {
+    text-decoration: underline;
+
+}
+
+.buttom-footer, .buttom-footer a {
+    color: var(--afro-yellow);
+    font-family: var(--secundary-font);
+    padding: 2%;
+    text-align: center;
+}
+
+.rrss {
+    padding-bottom: 10px;
+
+    /*flex*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rrss img {
+    width: 50px;
+    padding: 0px;
+    margin-left: 10px; 
+}
+
+.rrss img:hover {
+    border: var(--border);
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.10) inset;
+}
+
+.rrss p {
+    padding-bottom: 0px;
+}
+
+/* Fin Footer */
+
+
 
 /* Hero */
 
@@ -295,9 +394,6 @@ header div img {
 }
 
 .section-text p {
-    font-family: var(--secundary-font);
-    font-size: 26px;
-    line-height: 1em;
     padding-bottom: 6%;
 }
 
@@ -346,7 +442,7 @@ header div img {
     }
 
     h4 {
-        font-size: 38px; 
+        font-size: 30px; 
     }
 
     h5 {
@@ -377,7 +473,7 @@ header div img {
             height: var(--height-header-desk);  
         }
         
-        .logo {
+        .logo img {
             width: 48px; 
         }
         
@@ -398,9 +494,80 @@ header div img {
         
         .btn-menu {
             font-size: 36px;
+            
         }
 
     /* Fin Header Desk */
+
+    /* Footer - Desk */
+
+    .top-footer {
+        padding: 3%; 
+    
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .top-footer > a {
+        display: block; 
+        width: 40%; 
+    }
+
+    .top-footer > div {
+        width: 60%;
+    }
+    
+    .top-footer img {
+        width: 25%;
+        padding-bottom: 0px;
+    }
+
+    .top-footer p {
+        font-size: 24px;
+        padding-bottom: 20px;
+    }
+
+    .rrss {
+        padding-bottom: 20px;
+    }
+
+    .rrss p {
+        padding-bottom: 0px;
+    }
+
+    .rrss img {
+        width: 60px;
+    }
+
+    .buttom-footer {
+        padding: 1%;
+
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .buttom-footer div {
+        width: 20%;
+        text-align: end;
+    }
+
+    .buttom-footer a {
+        padding-right: 20px; 
+    }
+
+    .buttom-footer a:last-child {
+        padding-right: 0px; 
+    }
+
+    .buttom-footer p {
+        padding: 0px;
+        font-size: 14px;
+    }
+
 
     /* Hero - Desk */
     .hero, .main-section {
@@ -455,18 +622,6 @@ header div img {
         padding: var(--padding-section);
         width: 50%;
     }
-
-
-    .section-black div:nth-child(2) {
-        /* Estilos para el segundo div */
-        
-        
-        
-    }
-
-
-
-
 
 
 }
