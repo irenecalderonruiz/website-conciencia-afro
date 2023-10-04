@@ -77,7 +77,8 @@
 }
 
 body {
-    background-color: var(--afro-black); 
+    background-color: var(--afro-black);
+    max-width: 100%; 
     overflow-x: hidden;
 }
 
@@ -226,8 +227,8 @@ header {
 .logo {
     /* Nota: Importante para que no haya conflicto en la lógica con el div del icono hamburguesa y botón */
     z-index: 3000; 
+    
 }
-
 
 .logo img {
     width: 32px;
@@ -238,7 +239,8 @@ header {
 /* Botón hamburguesa y Botón */
 header div {
     width: 100%;
-    height: var(--height-header-mob); 
+    /* height: var(--height-header-mob);  */
+    height: 100%;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -479,7 +481,8 @@ footer p {
         
         header div {
             width: 100%;
-            height: var(--height-header-desk); 
+            /* height: var(--height-header-desk);  */
+            height: 100%;
             position: absolute;
             top: 0px;
             right: 0px;
