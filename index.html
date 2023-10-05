@@ -10,14 +10,17 @@
     <!-- Header -->
     <header>
         <!-- Logo -->
-        <a href="https://web.whatsapp.com/" class="logo">
+        <a href="index.html" class="logo">
             <img src="img/Logo-Conciencia-Afro.svg" alt="Logo Conciencia Afro">
         </a>
         
         <!-- Fin Logo -->
         <div> 
-            <img src="img/icon-menu.svg" alt="icono de hamburguesa">
-            <a href="#" class="btn-menu">ÚNETE</a>
+            <!-- <img src="img/icon-menu.svg" alt="icono de hamburguesa"> -->
+            <button id="btn_menu" class="btn_menu">
+                <span id="bar1"></span><span id="bar_middle"></span><span id="bar2"></span>
+            </button>
+            <a href="#" class="btn-cta">ÚNETE</a>
         </div>
     </header>
     <!-- Fin Header -->
@@ -76,7 +79,6 @@
 
 
     </section>
-
     <!-- Fin Sección Cards -->
     <!-- Sección Texto Grande -->
     <section class="section-big-text">
@@ -87,8 +89,6 @@
 
     </section>
     <!-- Fin Sección Texto Grande  -->
-
-
     <!-- Sección Contacto -->
     <section class="main-section bg-light-purple">
         <!-- Sección con imagen -->
@@ -102,8 +102,7 @@
             <a href="#" class="btn">Sí, tengo una idea</a>
         </div>
     </section>
-    <!-- Fin sección contacto -->
-    
+    <!-- Fin Sección Contacto -->
     <!-- Footer --> 
     <footer>
         <div class="top-footer bg-yellow">
@@ -112,7 +111,7 @@
                 <p>Estamos en el número 49 de la Calle Cáceres en Madrid</p>
                 <p>Nuestro email es <a href="#">hola@conciencia-afro.com</a></p>
                 <div class="rrss"><p>Puedes seguirnos en:</p> <a href="#"><img src="img/instagram-icon-afro.png" alt="Icono Instagram"></a><a href="#"><img src="img/twitter-icon-afro.png" alt="Icono Twitter"></a></div>
-                <p>O <a href="">suscribirte a nuestra newsletter</a> para enterarte de todo</p>
+                <p>O <a href="#" id="OpenModalNewsletter">suscribirte a nuestra newsletter</a> para enterarte de todo</p>
             </div>
         </div>
         <div class="buttom-footer">
@@ -126,12 +125,30 @@
     </footer> 
     <!-- Fin Footer -->
     <!-- Elementos Comunes -->
+        <!-- Pop-Up Newsletter -->
+        <div class="newsletter" id="ModalNewsletter">
+            <div><i class="fa-solid fa-xmark" id="btnCierre"></i><span>Newsletter <i class="fa-solid fa-circle"></i></span></div>
+            <p>Si quieres enterarte de todas las actividades y novedades puedes suscribirte a nuestra newsletter</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Escribe tu email">
+                <button>ENVIAR</button>
+            </div>
+        </div>
+        <!-- Pop-Up Menú -->
+        <div class="menu-pop-up" id="menu-pop-up">
+            <nav>
+                <a href="#" id="item-1">Conócenos</a>
+                <a href="#" id="item-2">Actividades/Eventos</a>
+                <a href="#" id="item-3">Residencia</a>
+                <a href="#" id="item-4">Contacto</a>
+            </nav>
+        </div>
     <!-- Fin Elementos Comunes -->
 
     <!-- JS Font Awesome -->
     <script src="https://kit.fontawesome.com/b599c0549b.js" crossorigin="anonymous"></script>
     <!-- JS Framework -->
-   
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- JS Propio -->
     <script src="js/main.js"></script>
 </body>

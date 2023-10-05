@@ -122,6 +122,30 @@ ul {
     background-color: var(--afro-green);
 }
 
+.bg-img-1 {
+    background-image: url(../img/conciencia-afro-quienes-somos-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-2 {
+    background-image: url(../img/conciencia-afro-quienes-somos-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-3 {
+    background-image: url(../img/festival-conciencia-afro-2019.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-img-4 {
+    background-image: url(../img/festival-conciencia-afro-2022-6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Tipografía */
 
 p {
@@ -182,9 +206,6 @@ h6{
 }
 
 
-
-
-
 .item-menu {
     font-family: var(--main-font); 
     font-size: 24px; 
@@ -241,8 +262,6 @@ header {
     align-items: center;   
 }
 
-
-
 .logo {
     /* Nota: Importante para que no haya conflicto en la lógica con el div del icono hamburguesa y botón */
     z-index: 3000; 
@@ -265,22 +284,56 @@ header div {
     right: 0px;
     z-index: 1000;
 
- 
-
     /*flex*/
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header div img {
+/* Botón hamburguesa */
+
+.btn_menu{
+	width: 30px;
+	height: 100%;
+	background-color: transparent;
+	border: none;
+	cursor: url("../img/pointer.png"), pointer;
+    margin-left: 4%;
+
+	/*flex*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn_menu span{
+	width: 100%;
+	height: 4px;
+	background-color: var(--afro-black);
+	margin: 2px 0px;
+	transition: transform .2s linear;
+}
+.bar1{
+	transform: rotate(45deg); 
+}
+
+.bar2{
+	transform: rotate(-45deg);
+	position: relative;
+	top: -8px;
+}
+
+/* header div img {
     height: 100%;
     padding: 10px;
     margin-right: 10px;
     width: 50px;    
 }
+ */
 
-.btn-menu {
+
+.btn-cta {
     height: 100%;
     font-family: var(--main-font);
     color: var(--afro-black);
@@ -290,14 +343,14 @@ header div img {
     transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-.btn-menu:hover {
+.btn-cta:hover {
     color: var(--afro-yellow);
     background-color: var(--afro-black);
 }
+
 /* Fin Header */
 
 /* Footer */
-
 footer p {
     font-family: var(--main-font-light);
 }
@@ -365,6 +418,145 @@ footer p {
 
 /* Fin Footer */
 
+/* Ventana Modal - Newsletter */
+.newsletter {
+    width: 100%; 
+    background-color: var(--afro-light-purple);
+    border: var(--border);
+    padding: 3%;
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 500; 
+}
+
+.newsletter div:first-child {
+    /*flex*/
+    display: flex;
+}
+
+.newsletter span {
+    font-family: var(--main-font);
+    text-transform: uppercase; 
+    width: 100%;
+    
+    /*flex*/
+    display: flex;
+    justify-content: flex-end;
+}
+
+.newsletter p {
+    padding: 16px 0px;
+    font-family: var(--secundary-font);
+    font-size: 24px;
+    line-height: 1.1em;
+}
+
+.newsletter span i {
+    color: var(--afro-red);
+    padding-left: 10px;
+}
+
+.newsletter-form {
+    /*flex*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter-form input {
+    height: 40px;
+    background-color: transparent;
+    border-bottom: var(--border);
+    border-right: 0px;
+    width: 100%;
+    color: var(--afro-black);
+}
+
+.newsletter-form button {
+    font-family: var(--main-font-light);
+    text-decoration: uppercase;
+    font-size: 24px; 
+    background-color: transparent;
+    border: var(--border);
+    border-color: transparent;
+    padding: 4px 8px;
+    color: var(--afro-black);
+    margin-left: 10px;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--afro-yellow);
+    border: var(--border);
+}
+
+.newsletter-form input::placeholder {
+    font-size: 24px;
+    font-family: var(--main-font-light);
+}
+
+.newsletter-form input:focus {
+    border: none; 
+    border-bottom: var(--border);
+    background-color: var(--afro-yellow);
+    font-size: 24px;
+    color: var(--afro-black);
+    font-family: var(--main-font-light);
+    outline: none; 
+}
+
+/* Ventana Modal - Menú */
+
+.menu-pop-up {
+    position: fixed; 
+    top: 0px; 
+    right: 0px; 
+    width: 100%;
+    height: 100vh;
+    
+    display: none; 
+
+    background-color: var(--afro-black);
+    color: var(--afro-yellow);
+    z-index: 1000;
+    
+}
+
+.menu-pop-up nav {
+    height: 100%;
+
+    padding-top: var(--height-header-desk);
+
+    /*flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.menu-pop-up a {
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    font-size: 2em;
+    color: var(--afro-yellow);
+    display: block;
+    text-align: center;
+}
+
+.menu-pop-up a:hover {
+    color: rgb(255, 255, 73);
+}
+
+
+
+
+
+
+
+
+/* Reglas Especificas */
 /* Hero */
 
 .hero {
@@ -505,14 +697,11 @@ footer p {
 
 
 
-
-/* Reglas Especificas */
-
-
-
 /* Responsive */
 
-@media all and (min-width:1280px) {
+@media all and (min-width:920px) {
+
+    /* 1280px */
 
     /* Tipografía */
 
@@ -550,9 +739,6 @@ footer p {
         font-size: 150px;
     }
 
-    .item-menu {
-        font-size: 30px; 
-    }
 
     /* Botón */
 
@@ -585,12 +771,24 @@ footer p {
             justify-content: flex-end;
             align-items: center;
         }
+
+        .btn_menu{
+            width: 40px; 
+            margin-right: 10px; 
+        }
         
-        .btn-menu {
+        .btn-cta {
             font-size: 36px;    
         }
 
     /* Fin Header Desk */
+
+    /* Pop-up Menu - Desk */
+    
+    .menu-pop-up a {
+        font-size: 4em;
+    }
+
 
     /* Footer - Desk */
 
@@ -661,6 +859,11 @@ footer p {
         font-size: 14px;
     }
 
+    /* Newsletter - Desk */
+    .newsletter {
+        width: 25%; 
+        padding: 1%;
+    }
 
     /* Hero - Desk */
     .hero, .main-section {
