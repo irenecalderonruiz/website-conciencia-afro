@@ -74,6 +74,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: var(--text-font);
     box-sizing: border-box;
     /* outline: 2px dashed purple; */
 }
@@ -148,7 +149,7 @@ ul {
 
 /* Tipografía */
 
-p {
+p, li {
     font-family: var(--text-font); 
     font-size: 16px;
     padding-bottom: 10px;
@@ -165,21 +166,21 @@ h1 {
 
 h2 {
     font-family: var(--secundary-font);
-    font-size: 36px;
+    font-size: 1.6em;
     text-transform: uppercase;
-    line-height: 0.8em;
+    line-height: 1em;
 }
 
 h3 {
     font-family: var(--secundary-font); 
-    font-size: 40px;
+    font-size: 1.5em;
 }
 
 h4 {
     font-family: var(--main-font);
-    font-size: 20px; 
+    font-size: 1.4em; 
     text-transform: uppercase;
-    padding-bottom: 2%;
+    padding-bottom: 4%;
 }
 
 h5 {
@@ -196,7 +197,7 @@ h6{
 
 .big-text {
     font-family: 'Casta-Thin';
-    font-size: 80px;
+    font-size: 3em;
     font-weight: lighter;
     text-align: center;
     text-transform: uppercase;
@@ -315,13 +316,13 @@ header div {
 	transition: transform .2s linear;
 }
 .bar1{
-	transform: rotate(45deg); 
+	transform: rotate(45deg);
 }
 
 .bar2{
 	transform: rotate(-45deg);
 	position: relative;
-	top: -8px;
+	top: -8px; 
 }
 
 /* header div img {
@@ -385,9 +386,10 @@ footer p {
 
 .buttom-footer, .buttom-footer a {
     color: var(--afro-yellow);
-    font-family: var(--secundary-font);
+    font-family: var(--main-font-light);
     padding: 2%;
     text-align: center;
+    letter-spacing: 0.5px;
 }
 
 .rrss {
@@ -494,6 +496,7 @@ footer p {
 .newsletter-form input::placeholder {
     font-size: 24px;
     font-family: var(--main-font-light);
+    color: var(--afro-black);
 }
 
 .newsletter-form input:focus {
@@ -515,31 +518,34 @@ footer p {
     width: 100%;
     height: 100vh;
     
+    
     display: none; 
 
     background-color: var(--afro-black);
     color: var(--afro-yellow);
-    z-index: 1000;
-    
+    z-index: 1000;    
 }
+
+
 
 .menu-pop-up nav {
     height: 100%;
 
-    padding-top: var(--height-header-desk);
+    padding-top: var(--height-header-mob);
 
     /*flex*/
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
+    gap: 2%;
 }
 
 .menu-pop-up a {
     font-family: var(--main-font);
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.6em;
     color: var(--afro-yellow);
     display: block;
     text-align: center;
@@ -616,14 +622,21 @@ footer p {
 
 .section-black {
     color: var(--afro-yellow); 
-    padding: var(--padding-section); 
+    padding: var(--padding-hero-mob);
 }
 
 .section-black h2, .section-black div {
     padding-bottom: 4%;
 }
 
-/* Sección fondo negro */
+.section-black img {
+    width: 100%;
+    display: block; 
+    padding-bottom: 4%;
+}
+
+
+/* Fin Sección fondo negro */
 
 .section-big-text {
     padding: var(--padding-section);
@@ -639,7 +652,8 @@ footer p {
 
 .card {
     width: 50%;
-    border: var(--border); 
+    border: var(--border);
+    border-right: 0px; 
     padding: 2%;
 
     /*flex*/
@@ -698,14 +712,13 @@ footer p {
 
 
 /* Responsive */
-
 @media all and (min-width:920px) {
 
     /* 1280px */
 
     /* Tipografía */
 
-    p {
+    p, li, ul {
         font-size: 20px;
         line-height: 1.4em; 
     }
@@ -736,7 +749,7 @@ footer p {
     }
 
     .big-text {
-        font-size: 150px;
+        font-size: 8em;
     }
 
 
@@ -774,7 +787,7 @@ footer p {
 
         .btn_menu{
             width: 40px; 
-            margin-right: 10px; 
+            margin-right: 16px; 
         }
         
         .btn-cta {
@@ -784,10 +797,16 @@ footer p {
     /* Fin Header Desk */
 
     /* Pop-up Menu - Desk */
+
+    .menu-pop-up nav {
+        padding-top: var(--height-header-desk);
+    }
     
     .menu-pop-up a {
         font-size: 4em;
     }
+
+
 
 
     /* Footer - Desk */
@@ -861,7 +880,7 @@ footer p {
 
     /* Newsletter - Desk */
     .newsletter {
-        width: 25%; 
+        width: 35%; 
         padding: 1%;
     }
 

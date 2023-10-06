@@ -34,14 +34,42 @@ $(document).ready(function (){
 		}
 	});
 
-    // Elimina el scroll vertical al abrir el menú hamburguesa 
-    $("#menu-pop-up").mouseenter(function() {
+    // Elimina el scroll vertical al abrir el menú hamburguesa
+    var scrollHabilitado = false;
+    $("#btn_menu").click(function() {
+        if (!scrollHabilitado) {
+            $("body").css("overflow-y", "hidden");
+            scrollHabilitado = true;
+        } else {
+            $("body").css("overflow-y", "visible");
+            scrollHabilitado = false;
+        }
+    });
+
+    /* $("#btn_menu").click(function() {
+        $("body").css("overflow-y", "hidden");
+    });
+
+    $("#btn_menu").click(function() {
+        $("body").css("overflow-y", "visible");
+    });
+     */
+
+    /* $("#menu-pop-up").mouseenter(function() {
         $("body").css("overflow-y", "hidden");
     });
 
     $("#menu-pop-up").mouseleave(function() {
         $("body").css("overflow-y", "visible");
+    }); */
+
+    /* $("#menu-pop-up").on("touchstart", function() {
+        $("body").css("overflow-y", "hidden");
     });
+    
+    $("#menu-pop-up").on("touchend", function() {
+        $("body").css("overflow-y", "visible");
+    }); */
 
     // Cambio de bg cuando clic en item de menu
         // Aparecer fondos
