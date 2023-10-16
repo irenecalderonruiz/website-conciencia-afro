@@ -1,0 +1,70 @@
+    {
+    	"flex_between":{
+    		"prefix": "flbt",
+    		"body": "/*flex*/\ndisplay: flex;\njustify-content: space-between;\nalign-items: center;"	
+    	},
+    	"flex_center":{
+    		"prefix": "flc",
+    		"body": "/*flex*/\ndisplay: flex;\njustify-content: center;\nalign-items: center;"	
+    	},
+    	"flex":{
+    		"prefix": "dfl",
+    		"body": "/*flex*/\ndisplay: flex;"	
+    	},
+    	"ready":{
+    		"prefix": "funcsn",
+    		"body": "$(document).ready(function (){\nalert('hola');\n\n$1\n});"	
+    	},
+    	"comentario_principal":{
+    		"prefix": "comp",
+    		"body": "/*----------------------*/\n/*- $1 -*/\n/*----------------------*/"	
+    	},
+    	"alert_prueba":{
+    		"prefix": "alp",
+    		"body": "alert('hola');"	
+    	},
+    	"console_log":{
+    		"prefix": "conl",
+    		"body": "console.log($1)"	
+    	},
+    	"timeout":{
+    		"prefix": "timeo",
+    		"body": "setTimeout(function() {\n\n}, $1);"	
+    	},
+    	"funtion_without":{
+    		"prefix": "fwitho",
+    		"body": "function() {\n$1\n}"	
+    	},
+    	"Display Grid":{
+    		"prefix": "disg",
+    		"body": "/*Grid*/\ndisplay:grid;\ngrid-template-columns:$1 ;\ngrid-template-rows: $2;"	
+    	},
+    	"backgroun-color":{
+    		"prefix": "bcc",
+    		"body": "background-color: $1;"	
+    	},
+    	"php echo":{
+    		"prefix": "phpe",
+    		"body": "<?php echo $1 ?>"	
+    	},
+    	"jqon":{
+    		"prefix": "doon",
+    		"body": "$(document).on('$1', '$2' ,function () {\n$3 alert('hola');\n\n});"	
+    	},
+    	"@media-tablet":{
+    		"prefix": "medit",
+    		"body": "@media (min-width: 768px){\n$2\n}"	
+    	},
+    	"@media-desk1":{
+    		"prefix": "medid1",
+    		"body": "@media screen and (min-width: 1024px){\n$1\n}"	
+    	},
+    	"linkquery":{
+    		"prefix": "lq",
+    		"body": "$_SESSION['link']->query($2);"	
+    	},
+    	"Ajax dato":{
+    		"prefix": "ajx",
+    		"body": "$.ajax({\n\turl: '',\n\ttype: 'POST',\n\tdata: ,\n\tprocessData: false,\n\tcontentType: false,\n\tsuccess:function(response){\n\t\n}}).fail(function (i,ai,x){\n\tconsole.log('error' + x);\n});"	
+    	}
+    }
