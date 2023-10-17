@@ -77,7 +77,7 @@
     margin: 0px;
     font-family: var(--text-font);
     box-sizing: border-box;
-   /*  outline: 2px dashed purple; */
+   /* outline: 2px dashed purple; */
 }
 
 body {
@@ -246,8 +246,7 @@ h6{
     border-radius: 100px;
     padding: 2px 10px;
     transition: var(--transition);
-    /* Para que todos los botones sean clicables y no haya conflicto de capas */
-    z-index: 4000; 
+     
 }
 
 .btn:hover {
@@ -761,18 +760,21 @@ footer p {
 /* Ayuda Section */
 
 .fixed-section {
-    min-height: 90vh;
+    /* height: 25vh; */
     position: fixed;
     top: 2%;
     right: 2%;
     left: 2%;
-    bottom: 2%;
+    /* bottom: 4%; */
     z-index: 1000;
+    /* background-color: var(--afro-yellow);
+    padding: 2%;
+    border: var(--border) */;
 
     /*flex*/
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -781,22 +783,26 @@ footer p {
 
     /*flex*/
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.fixed-section p {
-    display: block; 
-    width: 30%;
-    
+
+.fixed-section a:last-child {
+    /* Eliminar el correo electrónico que estéticamente no queda bien */
+    display: none;
 }
 
-.text-right{
-    text-align: right;
+.fixed-section p {
+    display: none; 
 }
+
+
 
 .panel {
     min-height: 100vh;
+    padding-bottom: 6%;
 
     /* Flex */
     display: flex;
@@ -819,15 +825,16 @@ footer p {
 
     /*flex*/
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: space-between;
 }
 
 
 .card-ayuda > div {
-    padding: 2%;
+    padding: 4%;
     width: 100%;
-    border-left: var(--border);
+    border-top: var(--border);
     /*flex*/
     display: flex;
     flex-direction: column;
@@ -851,7 +858,7 @@ footer p {
     display: block;
     width: 20%;
     font-family: var(--secundary-font);
-    font-size: 4em;
+    font-size: 2em;
     text-align: right;
 }
 
@@ -1125,4 +1132,164 @@ footer p {
         font-size: 20px;
     }
 
+    /* Ayuda Section - Desk  */
+
+    .fixed-section {
+        min-height: 90vh;
+        bottom: 2%;
+        background-color: transparent;
+        padding: 0;
+        border: none; 
+        
+
+        /* Flex */
+        justify-content: space-between;
+    }
+
+    .fixed-section div {
+        width: 100%;
+
+        /* Flex */
+        flex-direction: row;
+    }
+
+    .fixed-section a:last-child {
+        display: inline;
+    }
+
+    .fixed-section p {
+        display: block; 
+        width: 30%;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right{
+        text-align: right;
+    } 
+
+    .panel {
+        min-height: 100vh;
+        padding-bottom: 0;
+    
+        /* Flex */
+        justify-content: center;
+    }
+
+    .card-ayuda {
+        /*flex*/
+        flex-direction: row;
+    }
+
+    .card-ayuda > div {
+        padding: 2%;
+        border-left: var(--border);
+        border-top: 0; 
+    }
+
+    .titulo-precio span {
+        font-size: 4em;
+    }
+    
+
 }
+
+
+/* Ayuda Section */
+
+/* .fixed-section {
+    min-height: 90vh;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    left: 2%;
+    bottom: 2%;
+    z-index: 1000;
+
+    /*flex
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fixed-section div {
+    width: 100%;
+
+    /*flex
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fixed-section p {
+    display: block; 
+    width: 30%;
+    
+}
+
+.text-right{
+    text-align: right;
+}
+
+.panel {
+    min-height: 100vh;
+
+    /* Flex
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.panel h2 {
+    display: block; 
+    width: 60%;
+    text-align: center;
+}
+
+.card-ayuda {
+    border: var(--border);
+    height: 100%;
+    width: 50%;
+
+    /*flex
+    display: flex;
+    justify-content: flex-start;
+    align-items: space-between;
+}
+
+
+.card-ayuda > div {
+    padding: 2%;
+    width: 100%;
+    border-left: var(--border);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo-precio{
+
+    /*flex
+    display: flex;
+    align-items: flex-end;
+}
+
+.titulo-precio h4 {
+    display: block;
+    width: 80%;
+    padding-bottom: 0;
+}
+
+.titulo-precio span {
+    display: block;
+    width: 20%;
+    font-family: var(--secundary-font);
+    font-size: 4em;
+    text-align: right;
+} */
