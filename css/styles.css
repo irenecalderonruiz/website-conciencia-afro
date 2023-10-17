@@ -802,19 +802,20 @@ footer p {
 
 .panel {
     min-height: 100vh;
-    padding-bottom: 6%;
+    /* padding-bottom: 6%; */
+    padding-top: 10%; 
 
     /* Flex */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .panel h2 {
     display: block; 
-    width: 60%;
+    width: 70%;
     text-align: center;
 }
 
@@ -1173,9 +1174,15 @@ footer p {
     .panel {
         min-height: 100vh;
         padding-bottom: 0;
+        padding-top: 0;
     
         /* Flex */
         justify-content: center;
+        gap: 40px; 
+    }
+
+    .panel h2 {
+        width: 40%;
     }
 
     .card-ayuda {
@@ -1195,101 +1202,3 @@ footer p {
     
 
 }
-
-
-/* Ayuda Section */
-
-/* .fixed-section {
-    min-height: 90vh;
-    position: fixed;
-    top: 2%;
-    right: 2%;
-    left: 2%;
-    bottom: 2%;
-    z-index: 1000;
-
-    /*flex
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.fixed-section div {
-    width: 100%;
-
-    /*flex
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.fixed-section p {
-    display: block; 
-    width: 30%;
-    
-}
-
-.text-right{
-    text-align: right;
-}
-
-.panel {
-    min-height: 100vh;
-
-    /* Flex
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
-
-.panel h2 {
-    display: block; 
-    width: 60%;
-    text-align: center;
-}
-
-.card-ayuda {
-    border: var(--border);
-    height: 100%;
-    width: 50%;
-
-    /*flex
-    display: flex;
-    justify-content: flex-start;
-    align-items: space-between;
-}
-
-
-.card-ayuda > div {
-    padding: 2%;
-    width: 100%;
-    border-left: var(--border);
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.titulo-precio{
-
-    /*flex
-    display: flex;
-    align-items: flex-end;
-}
-
-.titulo-precio h4 {
-    display: block;
-    width: 80%;
-    padding-bottom: 0;
-}
-
-.titulo-precio span {
-    display: block;
-    width: 20%;
-    font-family: var(--secundary-font);
-    font-size: 4em;
-    text-align: right;
-} */
