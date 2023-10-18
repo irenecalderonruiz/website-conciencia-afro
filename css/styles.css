@@ -67,6 +67,10 @@
     /* --text-font: 'Vercetti-Regular'; */
     --text-font: 'Ubuntu', sans-serif;
 
+    /* Cursor */
+    --cursor: url("../img/pointer.png"), pointer;
+    transition: 0.5s;
+
 }
 
 
@@ -77,14 +81,31 @@
     margin: 0px;
     font-family: var(--text-font);
     box-sizing: border-box;
+    transition: all .2s linear;
    /* outline: 2px dashed purple; */
 }
+
+/* Diseño scrollbar */
+
+html::-webkit-scrollbar{
+    width:20px;
+}
+  
+html::-webkit-scrollbar-track{
+    background: var(--afro-black);
+}
+  
+html::-webkit-scrollbar-thumb{
+    background: var(--afro-yellow);
+}
+
+/* Fin diseño scrollbar */
 
 body {
     background-color: var(--afro-black);
     max-width: 100%; 
     overflow-x: hidden;
-    /* Prueba */
+    /* Para página de ayuda */
     transition: background-color 1s ease;
 }
 
@@ -92,8 +113,7 @@ a {
     font-family: var(--text-font);
     color: var(--afro-black);
     text-decoration: none;
-    cursor: url("../img/pointer.png"), pointer;
-    transition: 0.5s;
+    cursor: var(--cursor);
 }
 
 a:hover {
@@ -319,8 +339,7 @@ header div {
 	height: 100%;
 	background-color: transparent;
 	border: none;
-	cursor: url("../img/pointer.png"), pointer;
-    margin-left: 4%;
+	cursor: var(--cursor);
 
 	/*flex*/
 	display: flex;
@@ -653,10 +672,14 @@ footer p {
     padding-bottom: 4%;
 }
 
+.section-black h1 {
+    padding-bottom: 2%;
+}
+
 .section-black img {
     width: 100%;
     display: block; 
-    padding-bottom: 4%;
+    padding-top: 4%;
 }
 
 
@@ -742,6 +765,10 @@ footer p {
     font-size: 14px;
 }
 
+.card h4 {
+    padding-bottom: 0;
+}
+
 /* Titular sección  */
 
 .titular-section {
@@ -756,6 +783,52 @@ footer p {
 .titular-section h3 {
     padding-bottom: 0px;
 }
+
+/* Card Equipo */ /* Pruebas */
+
+
+.equipo {
+    padding: var(--padding-section);
+}
+
+.card-equipo {
+    color: var(--afro-yellow);
+    border-top: var(--border);
+    border-color: var(--afro-yellow);
+    padding: 2% 0;
+    cursor: var(--cursor);
+}
+
+.card-equipo:hover {
+    z-index: 100;
+    position: relative;
+}
+
+.card-equipo > .big-text{
+    font-size: 2em;
+    text-align: start;
+    padding-bottom: 2%;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    transform: translate(-50%, -50%) scale(.5);
+    opacity: 0;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+.card-equipo:hover ~ .hover-img{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+
+
+
 
 /* Ayuda Section */
 
@@ -822,7 +895,7 @@ footer p {
 .card-ayuda {
     border: var(--border);
     height: 100%;
-    width: 50%;
+    width: 70%;
 
     /*flex*/
     display: flex;
@@ -851,16 +924,20 @@ footer p {
 
 .titulo-precio h4 {
     display: block;
-    width: 80%;
+    width: 50%;
     padding-bottom: 0;
 }
 
 .titulo-precio span {
     display: block;
-    width: 20%;
+    width: 50%;
     font-family: var(--secundary-font);
     font-size: 2em;
     text-align: right;
+}
+
+.panel .btn {
+    z-index: 2000;
 }
 
 
@@ -883,7 +960,7 @@ footer p {
     /* Tipografía - Desk*/
 
     p, li {
-        font-size: 1.5em;
+        font-size: 1.3em;
         line-height: 1.4em; 
     }
 
@@ -894,7 +971,7 @@ footer p {
     }
 
     h2 {
-        font-size: 60px;
+        font-size: 2em;
     }
 
     h3 {
@@ -1109,7 +1186,7 @@ footer p {
     }
 
     .section-black img { 
-        width: 60%;
+        width: 80%;
         
     }
 
@@ -1133,6 +1210,26 @@ footer p {
         font-size: 20px;
     }
 
+    /* Section Cards Equipo */
+
+    .card-equipo {
+        /*flex*/
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .card-equipo > .big-text{
+        font-size: 3em;
+        display: block; 
+        width: 40%;
+    }
+
+    .card-equipo p {
+        display: block;
+        width: 60%;
+    }
+
     /* Ayuda Section - Desk  */
 
     .fixed-section {
@@ -1147,11 +1244,16 @@ footer p {
         justify-content: space-between;
     }
 
+    .fixed-section div:first-child {
+        align-items: flex-start;
+    }
+
     .fixed-section div {
         width: 100%;
 
         /* Flex */
         flex-direction: row;
+        align-items: flex-end;
     }
 
     .fixed-section a:last-child {
@@ -1161,6 +1263,7 @@ footer p {
     .fixed-section p {
         display: block; 
         width: 30%;
+        padding-bottom: 0;
     }
 
     .text-left {
