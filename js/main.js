@@ -75,40 +75,8 @@ $(document).ready(function (){
         $(".menu-pop-up").removeClass('bg-img-4');
     });
 
-    // Cambio de bg al hacer scroll
-
-    $(window).scroll(function () {
-	    $(".container").css("background", "lightblue");
-    });
 
 });
 
-// Cambio de scroll en la página de Ayuda-Únete
-    //  Tuve que cambiar color- por bg- 
 
-$(window).scroll(function() {
-  
-    // selectors
-    var $window = $(window),
-        $body = $('body'),
-        $panel = $('.panel');
-    
-    var scroll = $window.scrollTop() + ($window.height() / 3);
-   
-    $panel.each(function () {
-      var $this = $(this);
-      
-      if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-            
-        // Quitar clases
-        $body.removeClass(function (index, css) {
-          return (css.match (/(^|\s)bg-\S+/g) || []).join(' ');
-        });
-        
-        // Añadir clases
-        $body.addClass('bg-' + $(this).data('color'));
-      }
-    });    
-    
-  }).scroll();
 
