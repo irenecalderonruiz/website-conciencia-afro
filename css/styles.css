@@ -82,7 +82,7 @@
     font-family: var(--text-font);
     box-sizing: border-box;
     transition: all .2s linear;
-   /* outline: 2px dashed purple; */
+    /* outline: 2px dashed purple; */
 }
 
 /* Diseño scrollbar */
@@ -196,48 +196,50 @@ p, li {
 
 h1 {
     font-family: var(--main-font);
-    font-size: 1.8em; 
+    font-size: 6vw; 
     text-transform: uppercase;
     line-height: 1em;
 }
 
 h2 {
     font-family: var(--secundary-font);
-    font-size: 1.6em;
+    font-size: 7vw;
     text-transform: uppercase;
     line-height: 1em;
     font-weight: lighter;
     letter-spacing: 0.01em;
 }
 
+
+/* Tipografía de big-text */
 h3 {
     font-family: var(--secundary-font); 
-    font-size: 1.5em;
+    font-size: 4vw;
 }
 
 h4 {
     font-family: var(--main-font);
-    font-size: 1.4em; 
+    font-size: 4vw; 
     text-transform: uppercase;
     padding-bottom: 4%;
-
 }
 
 h5 {
     font-family: var(--secundary-font);
-    font-size: 26px;
+    font-size: 4.5vw;
     line-height: 1em;
+    font-weight: lighter;
 } 
 
 h6{
     font-family: var(--main-font);
-    font-size: 16px; 
+    font-size: 3vw; 
     text-transform: uppercase;
 }
 
 .big-text {
     font-family: 'Casta-Thin';
-    font-size: 3em;
+    font-size: 10vw;
     font-weight: lighter;
     text-align: center;
     text-transform: uppercase;
@@ -340,7 +342,8 @@ header div {
 	background-color: transparent;
 	border: none;
 	cursor: var(--cursor);
-
+    margin-left: 12px;
+    
 	/*flex*/
 	display: flex;
 	flex-direction: column;
@@ -352,7 +355,7 @@ header div {
 	width: 100%;
 	height: 4px;
 	background-color: var(--afro-black);
-	margin: 2px 0px;
+	margin: 2px 0;
 	transition: transform .2s linear;
 }
 .bar1{
@@ -392,8 +395,14 @@ header div {
 /* Fin Header */
 
 /* Footer */
+footer {
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+
 footer p {
     font-family: var(--main-font-light);
+    
 }
 .top-footer {
     text-align: center;
@@ -599,12 +608,6 @@ footer p {
 }
 
 
-
-
-
-
-
-
 /* Reglas Especificas */
 /* Hero */
 
@@ -626,7 +629,6 @@ footer p {
 
 /* Sección con imagen */
 .section-img {
-    border-bottom: var(--border);
     padding: var(--padding-section);
 }
 
@@ -784,8 +786,7 @@ footer p {
     padding-bottom: 0px;
 }
 
-/* Card Equipo */ /* Pruebas */
-
+/* Sección Equipo */
 
 .equipo {
     padding: var(--padding-section);
@@ -827,10 +828,7 @@ footer p {
   }
 
 
-
-
-
-/* Ayuda Section */
+/* Sección Ayuda */
 
 .fixed-section {
     /* height: 25vh; */
@@ -862,15 +860,10 @@ footer p {
 }
 
 
-.fixed-section a:last-child {
-    /* Eliminar el correo electrónico que estéticamente no queda bien */
+.fixed-section a:last-child, .fixed-section p, .fixed-section h6 {
+    /* Eliminar el correo electrónico y otros textos que estéticamente no queda bien para mobile y no aportan contenido */
     display: none;
 }
-
-.fixed-section p {
-    display: none; 
-}
-
 
 
 .panel {
@@ -940,17 +933,71 @@ footer p {
     z-index: 2000;
 }
 
+/* Sección formulario contacto */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form .section-text {
+    margin-top: var(--height-header-mob);
+}
+
+.section-form {
+    padding: var(--padding-section);
+}
+
+.section-form input {
+    background-color: var(--afro-yellow);
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: var(--border);
+}
+
+.section-form input:nth-child(4) {
+    padding: 20px 20px 80px 20px;
+}
+
+.section-form input::placeholder {
+    font-size: 20px;
+    font-family: var(--main-font-light);
+    color: var(--afro-black);
+}
+
+.section-form input:focus {
+    background-color: var(--afro-light-purple);
+    font-size: 20px;
+    color: var(--afro-black);
+    font-family: var(--main-font-light);
+    outline: none; 
+}
+
+.section-form label {
+    margin: 20px 0px;
+    width: 100%;
+    /*flex*/
+    display: flex;
+}
+
+.legal-text {
+    font-family: var(--text-font);
+    font-size: 14px;
+}
 
 
+.section-form input:last-child {
+    width:fit-content;
+    margin-right: 10px;
+}
 
+.section-form form {
 
-
-
-
-
-  
-
-
+    /* Flex - Para colocar el botón a la derecha */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
 /* Responsive */
 @media all and (min-width:920px) {
@@ -991,17 +1038,17 @@ footer p {
     }
 
     .big-text {
-        font-size: 8em;
+        font-size: 8vw;
     }
 
 
-    /* Botón */
+    /* Botón - Desk */
 
     .btn {
         font-size: 20px;
     }
 
-    /* Header Desk */
+    /* Header - Desk */
         header {
             height: var(--height-header-desk);  
         }
@@ -1047,9 +1094,6 @@ footer p {
     .menu-pop-up a {
         font-size: 4em;
     }
-
-
-
 
     /* Footer - Desk */
 
@@ -1159,6 +1203,7 @@ footer p {
     /* Sección con texto - Desk */
     .section-text {
         width: 50%;
+        border-bottom: 0;
         
         /*flex*/
         display: flex;
@@ -1169,8 +1214,9 @@ footer p {
 
     /* Sección Fondo Negro - Desk */
    .section-black {
-        padding: 0px; 
+        padding: 0px;
         height: 100vh;
+        margin-top: var(--height-header-desk);
         /*flex*/
         display: flex;
         align-items: flex-end;
@@ -1303,5 +1349,24 @@ footer p {
         font-size: 4em;
     }
     
+    /* Sección formulario contacto - desk */
+    .form {
+    
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .form .section-text {
+        width: 50%;
+        margin-top: var(--height-header-desk);
+        border-bottom: 0;
+    }
+
+    .section-form {
+        width: 50%;
+        margin-top: var(--height-header-desk);
+        border-left: var(--border);
+    }
+
 
 }
