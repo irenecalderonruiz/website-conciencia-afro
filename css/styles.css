@@ -81,25 +81,8 @@
     margin: 0px;
     font-family: var(--text-font);
     box-sizing: border-box;
-    transition: all .2s linear;
-    /* outline: 2px dashed purple; */
+    outline: 2px dashed purple;
 }
-
-/* Diseño scrollbar */
-
-html::-webkit-scrollbar{
-    width:20px;
-}
-  
-html::-webkit-scrollbar-track{
-    background: var(--afro-black);
-}
-  
-html::-webkit-scrollbar-thumb{
-    background: var(--afro-yellow);
-}
-
-/* Fin diseño scrollbar */
 
 body {
     background-color: var(--afro-black);
@@ -126,9 +109,23 @@ ul {
     list-style: none;
 }
 
+/* Diseño scrollbar */
+html::-webkit-scrollbar{
+    width:20px;
+}
+  
+html::-webkit-scrollbar-track{
+    background: var(--afro-black);
+}
+  
+html::-webkit-scrollbar-thumb{
+    background: var(--afro-yellow);
+}
 
+/* Fin diseño scrollbar */
 
-/* Background color */
+/* Background color -Para utilizar directamente en html y cambiar el color del contenedor sin tener que crear clases específicas en CSS ya que se han utilizado elementos comunes para utilizar con diferentes colores*/
+
 .bg-red {
     background-color: var(--afro-red);
 }
@@ -157,29 +154,28 @@ ul {
     background-color: var(--afro-green);
 }
 
-.bg-img-1 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/escenario-festival-conciencia-afro.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* Background imágenes de la ventana modal del menú */
 
-.bg-img-2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/afrozumba-espacio-afro.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.bg-img-3 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/residencia-espacio-afro.png);
+.bg-img-1, .bg-img-2, .bg-img-3, .bg-img-4 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+.bg-img-1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/escenario-festival-conciencia-afro.jpg);
+}
+
+.bg-img-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/afrozumba-espacio-afro.jpg);
+}
+
+.bg-img-3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/residencia-espacio-afro.png);
+}
+
 .bg-img-4 {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(../img/contacto-conciencia-afro.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 /* Tipografía */
@@ -190,9 +186,6 @@ p, li {
     padding-bottom: 10px;
     line-height: 1.4em;
 }
-
-
-
 
 h1 {
     font-family: var(--main-font);
@@ -367,14 +360,6 @@ header div {
 	position: relative;
 	top: -8px; 
 }
-
-/* header div img {
-    height: 100%;
-    padding: 10px;
-    margin-right: 10px;
-    width: 50px;    
-}
- */
 
 
 .btn-cta {
@@ -578,8 +563,6 @@ footer p {
     z-index: 1000;    
 }
 
-
-
 .menu-pop-up nav {
     height: 100%;
 
@@ -604,13 +587,14 @@ footer p {
 }
 
 .menu-pop-up a:hover {
+    /* He elegido otro color para crear un efecto sutil */
     color: rgb(255, 255, 73);
 }
 
 
 /* Reglas Especificas */
-/* Hero */
 
+/* Hero - Home */
 .hero {
     display: flex; 
     flex-direction: column-reverse;
@@ -620,8 +604,7 @@ footer p {
     padding: var(--padding-hero-mob);
 }
 
-/* Componentes Comunes */
-
+/* Sección imagen y texto */
 .main-section {
     display: flex; 
     flex-direction: column-reverse;
@@ -664,7 +647,6 @@ footer p {
 
 
 /* Sección con fondo negro */
-
 .section-black {
     color: var(--afro-yellow); 
     padding: var(--padding-hero-mob);
@@ -685,8 +667,7 @@ footer p {
 }
 
 
-/* Fin Sección fondo negro */
-
+/* Sección con texto grande */
 .section-big-text {
     padding: var(--padding-section);
     text-align: center;
@@ -695,12 +676,9 @@ footer p {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
 
 /* Sección Cards */
-
 .cards {
     /*flex*/
     display: flex;
@@ -751,7 +729,6 @@ footer p {
     margin: 10px 0px;  
 }
 
-
 .card img:last-child {
     width: 30px;
     margin: 0px; 
@@ -771,15 +748,11 @@ footer p {
     padding-bottom: 0;
 }
 
-/* Titular sección  */
-
+/* Titular Secciones */
 .titular-section {
-    color: var(--afro-yellow);
-    text-align: center;
     width: 100%;
-
-    padding: var(--padding-section);
-    padding-bottom: 2%;
+    text-align: center;
+    color: var(--afro-yellow);
 }
 
 .titular-section h3 {
@@ -787,7 +760,6 @@ footer p {
 }
 
 /* Sección Equipo */
-
 .equipo {
     padding: var(--padding-section);
 }
@@ -801,8 +773,8 @@ footer p {
 }
 
 .card-equipo:hover {
-    z-index: 100;
     position: relative;
+    z-index: 100;
 }
 
 .card-equipo > .big-text{
@@ -827,9 +799,7 @@ footer p {
     opacity: 1;
   }
 
-
 /* Sección Ayuda */
-
 .fixed-section {
     /* height: 25vh; */
     position: fixed;
@@ -859,12 +829,10 @@ footer p {
     align-items: center;
 }
 
-
 .fixed-section a:last-child, .fixed-section p, .fixed-section h6 {
     /* Eliminar el correo electrónico y otros textos que estéticamente no queda bien para mobile y no aportan contenido */
     display: none;
 }
-
 
 .panel {
     min-height: 100vh;
@@ -896,7 +864,6 @@ footer p {
     justify-content: flex-start;
     align-items: space-between;
 }
-
 
 .card-ayuda > div {
     padding: 4%;
@@ -933,7 +900,7 @@ footer p {
     z-index: 2000;
 }
 
-/* Sección formulario contacto */
+/* Sección Formulario Contacto */
 .form {
     display: flex;
     flex-direction: column;
@@ -985,7 +952,6 @@ footer p {
     font-size: 14px;
 }
 
-
 .section-form input:last-child {
     width:fit-content;
     margin-right: 10px;
@@ -999,19 +965,140 @@ footer p {
     align-items: flex-end;
 }
 
+/* Sección Actividades */
+/* En esta sección voy a probar nuevas formas de selección que no aprendí en clase pero he visto vídeos de State CSS 2023 y me parece una buena práctica */
+
+.actividades {
+    padding: var(--padding-section);
+    margin-top: var(--height-header-mob);
+}
+
+.card-actividad {
+    background-color: var(--afro-yellow);
+    padding: 2%;
+    border: var(--border);
+    margin-bottom: 10%;
+
+    /*flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    & div:first-child {
+        width: 100%;
+        /*flex*/
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+            & span {
+                font-family: var(--main-font);
+                text-transform: uppercase;
+            }
+
+            & span:first-child {
+                padding: 1%;
+                background-color: var(--afro-light-purple);
+                border: var(--border);
+            }
+
+            & span:last-child i {
+                padding-right: 4px;
+                color: var(--afro-purple);
+            }
+        }
+
+        & img {
+            width: 100%;
+            object-fit: cover;
+            margin: 20px 0;
+            border: var(--border);
+        }
+
+        & div:last-child > div {
+            flex-direction: column;
+        }
+
+        & div:last-child > div > div:last-child {
+            padding-top: 20px;
+        
+            /*flex*/
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            & span {
+                font-family: var(--main-font);
+                font-size: 5vw;
+                padding: 1%;
+                border: var(--border);
+                color: var(--afro-yellow);
+                background-color: var(--afro-black);
+            }
+        }
+}
+
+.card-actividad:hover {
+    background-color: var(--afro-light-green);
+}
+
+
+
+
+
+/* .card-actividad div:first-child {
+    width: 100%;
+    /*flex
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & span {
+        font-family: var(--main-font);
+        text-transform: uppercase;
+    }
+
+    & span:first-child {
+        padding: 1%;
+        background-color: var(--afro-light-purple);
+        border: var(--border);
+    }
+
+    & span:last-child i {
+        padding-right: 4px;
+        color: var(--afro-purple);
+    }
+} */
+
+/* .card-actividad div:first-child {
+    /*flex
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+} */
+
+
+/* .card-actividad div:nth-child(2) > div > div {
+    padding-top: 20px;
+
+    /*flex
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
 /* Responsive */
 @media all and (min-width:920px) {
 
     /* 1280px */
 
     /* Tipografía - Desk*/
-
     p, li {
         font-size: 1.3em;
         line-height: 1.4em; 
     }
-
-    
 
     h1 {
         font-size: 2.8vw; 
@@ -1043,50 +1130,44 @@ footer p {
 
 
     /* Botón - Desk */
-
     .btn {
         font-size: 20px;
     }
 
     /* Header - Desk */
-        header {
-            height: var(--height-header-desk);  
-        }
+    header {
+        height: var(--height-header-desk);  
+    }
         
-        .logo img {
-            width: 48px; 
-        }
+    .logo img {
+        width: 48px; 
+    }
         
-        header div {
-            width: 100%;
-            /* height: var(--height-header-desk);  */
-            height: 100%;
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            margin: auto; 
-            z-index: 2000; 
+    header div {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        margin: auto; 
+        z-index: 2000; 
             
-        
-            /*flex*/
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
+        /*flex*/
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
 
-        .btn_menu{
-            width: 40px; 
-            margin-right: 16px; 
-        }
+    .btn_menu{
+        width: 40px; 
+        margin-right: 16px; 
+    }
         
-        .btn-cta {
-            font-size: 36px;    
-        }
-
-    /* Fin Header Desk */
+    .btn-cta {
+        font-size: 36px;    
+    }
 
     /* Pop-up Menu - Desk */
-
     .menu-pop-up nav {
         padding-top: var(--height-header-desk);
     }
@@ -1096,7 +1177,6 @@ footer p {
     }
 
     /* Footer - Desk */
-
     .top-footer {
         padding: 3%; 
     
@@ -1181,8 +1261,6 @@ footer p {
         flex-direction: row;
     }
 
-
-
     /* Sección con imagen - Desk */
     .section-img {
         width: 50%;
@@ -1246,7 +1324,6 @@ footer p {
         margin: 20px 0px;  
     }
 
-
     .card img:last-child {
         width: 60px;
         padding: 4px;
@@ -1256,8 +1333,7 @@ footer p {
         font-size: 20px;
     }
 
-    /* Section Cards Equipo */
-
+    /* Sección Cards Equipo - Desk */
     .card-equipo {
         /*flex*/
         display: flex;
@@ -1276,8 +1352,7 @@ footer p {
         width: 60%;
     }
 
-    /* Ayuda Section - Desk  */
-
+    /* Ayuda Section - Desk */
     .fixed-section {
         min-height: 90vh;
         bottom: 2%;
@@ -1349,7 +1424,7 @@ footer p {
         font-size: 4em;
     }
     
-    /* Sección formulario contacto - desk */
+    /* Sección Formulario Contacto - desk */
     .form {
     
         flex-direction: row;
@@ -1368,5 +1443,52 @@ footer p {
         border-left: var(--border);
     }
 
+    /* Sección Actividades */
 
+    .card-actividad {
+        padding: 1%;
+        margin-bottom: 4%;
+
+        & div:first-child {
+            
+                & span:first-child {
+                    padding: 0.5%;
+                }
+
+            }
+
+            & div:last-child {
+                padding-top: 1%;
+        
+                /*flex*/
+                display: flex;
+
+                /* ¡Para que ocupe todo el espacio disponible! */
+                align-items: stretch;
+
+                & img {
+                    margin: 0;
+                    width: 40%;
+                }
+
+                & div {
+                    width: 100%;
+                    padding: 2%;
+            
+                    justify-content: space-between;
+                }
+
+                & div > div {
+                    padding: 0;
+                }
+            }
+
+            & div:last-child > div > div:last-child {
+                & span {
+                    font-size: 1.5vw;
+                }
+            }
+    }
+
+  
 }
