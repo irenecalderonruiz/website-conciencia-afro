@@ -973,13 +973,13 @@ footer p {
     margin-top: var(--height-header-mob);
 }
 
-.card-actividad {
+/* .card-actividad {
     background-color: var(--afro-yellow);
     padding: 2%;
     border: var(--border);
     margin-bottom: 10%;
 
-    /*flex*/
+    /*flex
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -987,7 +987,7 @@ footer p {
 
     & div:first-child {
         width: 100%;
-        /*flex*/
+        /*flex
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -1023,7 +1023,7 @@ footer p {
         & div:last-child > div > div:last-child {
             padding-top: 20px;
         
-            /*flex*/
+            /*flex
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -1038,56 +1038,79 @@ footer p {
                 background-color: var(--afro-black);
             }
         }
+} */
+
+.card-actividad {
+    background-color: var(--afro-yellow);
+    padding: 2%;
+    border: var(--border);
+    margin-bottom: 10%;
+
+    /*flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-actividad div:first-child {
+    width: 100%;
+    /*flex*/
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-actividad div:first-child span {
+    font-family: var(--main-font);
+    text-transform: uppercase;
+}
+
+.card-actividad div:first-child span:first-child {
+    padding: 1%;
+    background-color: var(--afro-light-purple);
+    border: var(--border);
+}
+
+.card-actividad div:first-child i {
+    padding-right: 4px;
+    color: var(--afro-purple);
+}
+
+.card-actividad img {
+    width: 100%;
+    object-fit: cover;
+    margin: 20px 0;
+    border: var(--border);
+}
+
+.card-actividad div:last-child > div {
+    flex-direction: column;
+}
+
+.card-actividad div:last-child > div > div:last-child {
+    padding-top: 20px;
+
+    /*flex*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-actividad div:last-child > div > div:last-child span {
+    font-family: var(--main-font);
+    font-size: 5vw;
+    padding: 1%;
+    border: var(--border);
+    color: var(--afro-yellow);
+    background-color: var(--afro-black);
 }
 
 .card-actividad:hover {
     background-color: var(--afro-light-green);
 }
 
-
-
-
-
-/* .card-actividad div:first-child {
-    width: 100%;
-    /*flex
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    & span {
-        font-family: var(--main-font);
-        text-transform: uppercase;
-    }
-
-    & span:first-child {
-        padding: 1%;
-        background-color: var(--afro-light-purple);
-        border: var(--border);
-    }
-
-    & span:last-child i {
-        padding-right: 4px;
-        color: var(--afro-purple);
-    }
-} */
-
-/* .card-actividad div:first-child {
-    /*flex
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-} */
-
-
-/* .card-actividad div:nth-child(2) > div > div {
-    padding-top: 20px;
-
-    /*flex
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 /* Responsive */
 @media all and (min-width:920px) {
@@ -1443,9 +1466,49 @@ footer p {
         border-left: var(--border);
     }
 
-    /* Sección Actividades */
-
+    /* Sección Actividades - Desk */
     .card-actividad {
+        padding: 1%;
+        margin-bottom: 4%;
+    }
+
+    .card-actividad div:first-child span:first-child {
+        padding: 0.5%;
+    }
+
+    .card-actividad div:last-child {
+        padding-top: 1%;
+        
+        /*flex*/
+        display: flex;
+
+        /* ¡Para que ocupe todo el espacio disponible! */
+        align-items: stretch;
+    }
+
+    .card-actividad div:last-child img {
+        margin: 0;
+        width: 40%;
+    }
+
+    .card-actividad div:last-child div {
+        width: 100%;
+        padding: 2%;
+            
+        justify-content: space-between;
+    }
+
+    .card-actividad div:last-child div > div {
+        padding: 0;
+    }
+    
+    .card-actividad div:last-child > div > div:last-child span {
+        font-size: 1.5vw;
+    }
+    
+}
+
+    /* .card-actividad {
         padding: 1%;
         margin-bottom: 4%;
 
@@ -1460,10 +1523,10 @@ footer p {
             & div:last-child {
                 padding-top: 1%;
         
-                /*flex*/
+                /*flex
                 display: flex;
 
-                /* ¡Para que ocupe todo el espacio disponible! */
+                /* ¡Para que ocupe todo el espacio disponible! 
                 align-items: stretch;
 
                 & img {
@@ -1488,7 +1551,7 @@ footer p {
                     font-size: 1.5vw;
                 }
             }
-    }
+    } */
 
   
 }
