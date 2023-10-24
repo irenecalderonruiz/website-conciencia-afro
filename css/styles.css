@@ -1,16 +1,4 @@
-/* Parametros */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-
-@font-face {
-    font-family: 'Casta-Thin';
-    src: url(../fonts/Casta-Thin.otf);
-}
-
-/* @font-face {
-    font-family: 'Vercetti-Regular';
-    src: url(../fonts/Vercetti-Regular.ttf);
-} */
-
+/* Parámetros */
 @font-face {
     font-family: 'Franklin-Gothic-Heavy';
     src: url(../fonts/Franklin-Gothic-Heavy.TTF);
@@ -26,6 +14,16 @@
     src: url(../fonts/Gruppo-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Ubuntu-Light';
+    src: url(../fonts/Ubuntu-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Casta-Thin';
+    src: url(../fonts/Casta-Thin.otf);
+}
+
 
 /* Variables */
 :root {
@@ -35,27 +33,26 @@
     --afro-red: #D93100;
     --afro-light-red: #DD6144;
     --afro-purple: #BC1A8F; 
-   /*  --afro-light-purple: #BB7FB4;  */
-   --afro-light-purple: #d8a8d2; 
+    --afro-light-purple: #D8A8D2; 
     --afro-green: #89FC59; 
     --afro-light-green: #A7D992;
 
 
     /* Valores comunes */
+
+    /* Alto del header */
     --height-header-mob: 48px;
     --height-header-desk: 68px;
-    --padding-between-text: 10px;
-    
-    --padding-sides: 4%; 
-    --padding-between-elements: 10%; 
-    
+
+
+    /* Paddings */
+    --padding-sides: 4%;
+    --padding-between-elements: 10%;
+
     --padding-section: var(--padding-between-elements) var(--padding-sides);
-    --padding-hero-mob: calc(var(--padding-between-elements) + var(--height-header-mob)) var(--padding-sides) var(--padding-between-elements) var(--padding-sides);
 
+    /* Transicciones */
     --transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;   
-
-
-
 
     /* Bordes */
     --border: 1.5px solid var(--afro-black);
@@ -64,16 +61,13 @@
     --main-font: 'Franklin-Gothic-Heavy', 'Arial Narrow', Arial, sans-serif;
     --main-font-light: 'Franklin-Gothic-Book', Arial, sans-serif; 
     --secundary-font: 'Gruppo-Regular', sans-serif;
-    /* --text-font: 'Vercetti-Regular'; */
-    --text-font: 'Ubuntu', sans-serif;
+    --text-font: 'Ubuntu-Light', sans-serif;
+    --big-font: 'Casta-Thin'; 
 
     /* Cursor */
     --cursor: url("../img/pointer.png"), pointer;
-    transition: 0.5s;
 
 }
-
-
     
 /* Normalizadores (Hoja de estilos) */
 *{
@@ -103,8 +97,6 @@ a:hover {
     font-weight: bolder;
 }
 
-
-
 ul {
     list-style: none;
 }
@@ -124,8 +116,7 @@ html::-webkit-scrollbar-thumb{
 
 /* Fin diseño scrollbar */
 
-/* Background color -Para utilizar directamente en html y cambiar el color del contenedor sin tener que crear clases específicas en CSS ya que se han utilizado elementos comunes para utilizar con diferentes colores*/
-
+/* Background color -Para utilizar directamente en html y cambiar el color del contenedor sin tener que crear clases específicas en CSS ya que se han utilizado elementos comunes para utilizar con diferentes colores de fondo*/
 .bg-red {
     background-color: var(--afro-red);
 }
@@ -155,7 +146,6 @@ html::-webkit-scrollbar-thumb{
 }
 
 /* Background imágenes de la ventana modal del menú */
-
 .bg-img-1, .bg-img-2, .bg-img-3, .bg-img-4 {
     background-repeat: no-repeat;
     background-size: cover;
@@ -179,12 +169,11 @@ html::-webkit-scrollbar-thumb{
 }
 
 /* Tipografía */
-
 p, li {
     font-family: var(--text-font); 
     font-size: 16px;
-    padding-bottom: 10px;
     line-height: 1.4em;
+    padding-bottom: 10px;
 }
 
 h1 {
@@ -197,17 +186,23 @@ h1 {
 h2 {
     font-family: var(--secundary-font);
     font-size: 7vw;
+    font-weight: lighter;
     text-transform: uppercase;
     line-height: 1em;
-    font-weight: lighter;
     letter-spacing: 0.01em;
 }
 
 
 /* Tipografía de big-text */
-h3 {
-    font-family: var(--secundary-font); 
-    font-size: 4vw;
+h3, .big-text {
+    font-family: var(--big-font);
+    font-size: 10vw;
+    font-weight: lighter;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1em;
+    color: var(--afro-yellow);
+    padding-bottom: 40px;
 }
 
 h4 {
@@ -220,8 +215,8 @@ h4 {
 h5 {
     font-family: var(--secundary-font);
     font-size: 4.5vw;
-    line-height: 1em;
     font-weight: lighter;
+    line-height: 1em;
 } 
 
 h6{
@@ -229,18 +224,6 @@ h6{
     font-size: 3vw; 
     text-transform: uppercase;
 }
-
-.big-text {
-    font-family: 'Casta-Thin';
-    font-size: 10vw;
-    font-weight: lighter;
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1em;
-    color: var(--afro-yellow);
-    padding-bottom: 40px;
-}
-
 
 .item-menu {
     font-family: var(--main-font); 
@@ -250,7 +233,6 @@ h6{
 }
 
 /* Botón */
-
 .btn {
     font-family: var(--main-font);
     font-size: 16px; 
@@ -261,7 +243,6 @@ h6{
     border-radius: 100px;
     padding: 2px 10px;
     transition: var(--transition);
-     
 }
 
 .btn:hover {
@@ -271,16 +252,7 @@ h6{
     box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.30) inset;
 }
 
-
-
-/* Reglas recursivas (elementos que se utilicen más de una vez pero no se puedan normalizar, ya que son un componente que tiene diferentes estilos en las diferentes aplicaciones. (botones, o por ejemplo quitar unos bordes... etc) */
-
-
-
-
-
-
-/* Reglas generales (marco, header, footer, nav (menú), ventana modal (pop up) */
+/* Reglas generales */
 
 /* Header */
 header {
@@ -300,9 +272,8 @@ header {
 }
 
 .logo {
-    /* Nota: Importante para que no haya conflicto en la lógica con el div del icono hamburguesa y botón */
+    /* Nota: Importante para que no haya conflicto lógico con el div del icono hamburguesa y botón */
     z-index: 3000; 
-    
 }
 
 .logo img {
@@ -310,11 +281,9 @@ header {
     height: 100%;     
 } 
 
-
 /* Botón hamburguesa y Botón */
 header div {
     width: 100%;
-    /* height: var(--height-header-mob);  */
     height: 100%;
     position: absolute;
     top: 0px;
@@ -328,7 +297,6 @@ header div {
 }
 
 /* Botón hamburguesa */
-
 .btn_menu{
 	width: 30px;
 	height: 100%;
@@ -351,6 +319,7 @@ header div {
 	margin: 2px 0;
 	transition: transform .2s linear;
 }
+
 .bar1{
 	transform: rotate(45deg);
 }
@@ -361,7 +330,6 @@ header div {
 	top: -8px; 
 }
 
-
 .btn-cta {
     height: 100%;
     font-family: var(--main-font);
@@ -369,15 +337,13 @@ header div {
     font-size: 20px;
     padding: 12px;
     border-left: var(--border);
-    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition: var(--transition);
 }
 
 .btn-cta:hover {
     color: var(--afro-yellow);
     background-color: var(--afro-black);
 }
-
-/* Fin Header */
 
 /* Footer */
 footer {
@@ -451,8 +417,6 @@ footer p {
 .rrss p {
     padding-bottom: 0px;
 }
-
-/* Fin Footer */
 
 /* Ventana Modal - Newsletter */
 .newsletter {
@@ -547,7 +511,6 @@ footer p {
 }
 
 /* Ventana Modal - Menú */
-
 .menu-pop-up {
     position: fixed; 
     top: 0px; 
@@ -598,10 +561,11 @@ footer p {
 .hero {
     display: flex; 
     flex-direction: column-reverse;
+    
 }
 
 .hero > .section-text {
-    padding: var(--padding-hero-mob);
+    margin-top: var(--height-header-mob);
 }
 
 /* Sección imagen y texto */
@@ -649,7 +613,8 @@ footer p {
 /* Sección con fondo negro */
 .section-black {
     color: var(--afro-yellow); 
-    padding: var(--padding-hero-mob);
+    padding: var(--padding-section);
+    margin-top: var(--height-header-mob);
 }
 
 .section-black h2, .section-black div {
@@ -694,14 +659,20 @@ footer p {
     /*flex*/
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: flex-end;
 }
 
 .card div:first-child {
     width: 100%;
-    padding-bottom: 10px;
+  /*   padding-bottom: 10px; */
 
-    /*flex*/
+    /*flex*/ 
+    justify-content: space-between;
+}
+
+.card div:first-child > div:first-child {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -806,11 +777,7 @@ footer p {
     top: 2%;
     right: 2%;
     left: 2%;
-    /* bottom: 4%; */
     z-index: 1000;
-    /* background-color: var(--afro-yellow);
-    padding: 2%;
-    border: var(--border) */;
 
     /*flex*/
     display: flex;
@@ -836,7 +803,6 @@ footer p {
 
 .panel {
     min-height: 100vh;
-    /* padding-bottom: 6%; */
     padding-top: 10%; 
 
     /* Flex */
@@ -920,6 +886,7 @@ footer p {
     width: 100%;
     margin-bottom: 20px;
     border: var(--border);
+    border-radius: 0;
 }
 
 .section-form input:nth-child(4) {
@@ -953,8 +920,11 @@ footer p {
 }
 
 .section-form input:last-child {
-    width:fit-content;
+    width: fit-content;
     margin-right: 10px;
+
+    /* Tamaño del checkbox */
+    padding: 8px;
 }
 
 .section-form form {
@@ -965,9 +935,30 @@ footer p {
     align-items: flex-end;
 }
 
-/* Sección Actividades */
-/* En esta sección voy a probar nuevas formas de selección que no aprendí en clase pero he visto vídeos de State CSS 2023 y me parece una buena práctica */
+/* Diseño checkbox */
+.mycheck {
+  display: inline-flex;
+  align-items: center;
+  cursor: var(--cursor);
+  background-color: var(--afro-black);
+  color: var(--afro-black);
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  width: 10px;
+  height: 10px;
+  appearance: none;
+  border: var(--border);
+  background-position: 0 -2rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in-out;
+}
+.mycheck:checked {
+  background-color: var(--afro-yellow);
+  color: var(--afro-yellow);
+  background-position: 0 0;
+} 
 
+/* Sección Actividades */
 .actividades {
     padding: var(--padding-section);
     margin-top: var(--height-header-mob);
@@ -1101,6 +1092,7 @@ footer p {
 .card-actividad div:last-child > div > div:last-child span {
     font-family: var(--main-font);
     font-size: 5vw;
+    text-transform: uppercase;
     padding: 1%;
     border: var(--border);
     color: var(--afro-yellow);
@@ -1129,10 +1121,6 @@ footer p {
 
     h2 {
         font-size: 3vw;
-    }
-
-    h3 {
-        font-size: 2.5vw;
     }
 
     h4 {
@@ -1275,11 +1263,11 @@ footer p {
 
     /* Hero - Desk */
     .hero, .main-section {
-        height: calc(100vh --height-header-desk); 
+        height: 100vh;
+        margin-top: var(--height-header-desk); 
     
         /*flex*/
         display: flex;
-        /* justify-content: center; */
         align-items: flex-end;
         flex-direction: row;
     }
@@ -1298,7 +1286,6 @@ footer p {
 
     .section-img img{
         width: 100%;
-        
     }
 
     /* Sección con texto - Desk */
@@ -1400,12 +1387,12 @@ footer p {
         align-items: flex-end;
     }
 
-    .fixed-section a:last-child {
-        display: inline;
+    .fixed-section a:last-child, .fixed-section p, .fixed-section h6 {
+        /* Eliminar el correo electrónico y otros textos que estéticamente no queda bien para mobile y no aportan contenido */
+        display: block;
     }
 
     .fixed-section p {
-        display: block; 
         width: 30%;
         padding-bottom: 0;
     }
@@ -1416,7 +1403,7 @@ footer p {
 
     .text-right{
         text-align: right;
-    } 
+    }
 
     .panel {
         min-height: 100vh;
@@ -1449,7 +1436,6 @@ footer p {
     
     /* Sección Formulario Contacto - desk */
     .form {
-    
         flex-direction: row;
         align-items: flex-start;
     }
@@ -1554,4 +1540,3 @@ footer p {
     } */
 
   
-}
