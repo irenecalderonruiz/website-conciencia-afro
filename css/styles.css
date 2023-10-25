@@ -1104,13 +1104,11 @@ footer p {
 
 
 /* Responsive */
-@media all and (min-width:920px) {
-
-    /* 1280px */
+@media all and (min-width:1025px) {
 
     /* Tipografía - Desk*/
     p, li {
-        font-size: 1.3em;
+        font-size: 1.3vw;
         line-height: 1.4em; 
     }
 
