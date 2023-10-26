@@ -664,7 +664,7 @@ footer p {
 
 .card div:first-child {
     width: 100%;
-  /*   padding-bottom: 10px; */
+    padding-bottom: 10px;
 
     /*flex*/ 
     justify-content: space-between;

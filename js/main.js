@@ -1,5 +1,13 @@
 $(document).ready(function (){
 
+    // Abrir Pop-up solo en página de inicio
+    if ($('body').hasClass('home-page')) {
+        // Mostrar el pop-up automáticamente en la página de inicio
+        $('#ModalNewsletter').show();
+    }else{
+        $("#ModalNewsletter").hide();  
+    }
+ 
     // Cierre Pop-Up Newsletter
 	$("#btnCierre").click(function(e) {
 		e.preventDefault();
