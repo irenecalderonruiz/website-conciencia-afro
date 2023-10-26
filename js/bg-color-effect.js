@@ -1,9 +1,8 @@
 // Cambio de scroll en la página de Ayuda-Únete
-    //  Tuve que cambiar color- por bg- 
-
+    //  Tuve que cambiar color- por bg- y añadir la estructura correspondiente a html
 $(window).scroll(function() {
   
-        // selectors
+        // Selectores
         var $window = $(window),
             $body = $('body'),
             $panel = $('.panel');

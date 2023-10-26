@@ -45,10 +45,12 @@
 
 
     /* Paddings */
-    --padding-sides: 4%;
-    --padding-between-elements: 10%;
+    --xsmall: 1%;
+    --small: 2%;
+    --medium: 4%;
+    --large: 10%;
 
-    --padding-section: var(--padding-between-elements) var(--padding-sides);
+    --padding-section: var(--large) var(--medium);
 
     /* Transicciones */
     --transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;   
@@ -61,11 +63,10 @@
     --main-font-light: 'Franklin-Gothic-Book', Arial, sans-serif; 
     --secundary-font: 'Gruppo-Regular', sans-serif;
     --text-font: 'Ubuntu-Light', sans-serif;
-    --big-font: 'Casta-Thin'; 
+    --big-font: 'Casta-Thin', Times, serif;
 
     /* Cursor */
     --cursor: url("../img/pointer.png"), pointer;
-
 }
     
 /* Normalizadores (Hoja de estilos) */
@@ -74,6 +75,7 @@
     margin: 0px;
     font-family: var(--text-font);
     box-sizing: border-box;
+    /* Activar para ver delimitaciones de los elementos de estrucrura */
     /* outline: 2px dashed purple; */
 }
 
@@ -81,6 +83,7 @@ body {
     background-color: var(--afro-black);
     max-width: 100%; 
     overflow-x: hidden;
+
     /* Para página de ayuda */
     transition: background-color 1s ease;
 }
@@ -112,8 +115,6 @@ html::-webkit-scrollbar-track{
 html::-webkit-scrollbar-thumb{
     background: var(--afro-yellow);
 }
-
-/* Fin diseño scrollbar */
 
 /* Background color -Para utilizar directamente en html y cambiar el color del contenedor sin tener que crear clases específicas en CSS ya que se han utilizado elementos comunes para utilizar con diferentes colores de fondo*/
 .bg-red {
@@ -172,7 +173,7 @@ p, li {
     font-family: var(--text-font); 
     font-size: 16px;
     line-height: 1.4em;
-    padding-bottom: 10px;
+    padding-bottom: var(--small);
 }
 
 h1 {
@@ -191,7 +192,6 @@ h2 {
     letter-spacing: 0.01em;
 }
 
-
 /* Tipografía de big-text */
 h3, .big-text {
     font-family: var(--big-font);
@@ -201,14 +201,14 @@ h3, .big-text {
     text-transform: uppercase;
     line-height: 1em;
     color: var(--afro-yellow);
-    padding-bottom: 40px;
+    padding-bottom: var(--medium);
 }
 
 h4 {
     font-family: var(--main-font);
     font-size: 4vw; 
     text-transform: uppercase;
-    padding-bottom: 4%;
+    padding-bottom: var(--medium);
 }
 
 h5 {
@@ -356,13 +356,13 @@ footer p {
 }
 .top-footer {
     text-align: center;
-    padding: 10%; 
+    padding: var(--large); 
     color: var(--afro-black); 
 }
 
 .top-footer img {
     width: 20%;
-    padding-bottom: 40px;
+    padding-bottom: var(--large);
 }
 
 .top-footer > div {
@@ -386,13 +386,13 @@ footer p {
 .buttom-footer, .buttom-footer a {
     color: var(--afro-yellow);
     font-family: var(--main-font-light);
-    padding: 2%;
+    padding: var(--small);
     text-align: center;
     letter-spacing: 0.5px;
 }
 
 .rrss {
-    padding-bottom: 10px;
+    padding-bottom: var(--small);
 
     /*flex*/
     display: flex;
@@ -402,8 +402,8 @@ footer p {
 
 .rrss img {
     width: 50px;
-    padding: 0px;
-    margin-left: 10px; 
+    padding: 0;
+    margin-left: var(--small); 
     transition: var(--transition);
 }
 
@@ -414,7 +414,7 @@ footer p {
 }
 
 .rrss p {
-    padding-bottom: 0px;
+    padding-bottom: 0;
 }
 
 /* Ventana Modal - Newsletter */
@@ -422,12 +422,12 @@ footer p {
     width: 100%; 
     background-color: var(--afro-light-purple);
     border: var(--border);
-    padding: 3%;
+    padding: var(--small);
 
     position: fixed;
     bottom: 0px;
     left: 0px;
-    z-index: 500; 
+    z-index: 1000; 
 }
 
 .newsletter div:first-child {
@@ -446,7 +446,7 @@ footer p {
 }
 
 .newsletter p {
-    padding: 16px 0px;
+    padding: var(--small) 0;
     font-family: var(--secundary-font);
     font-size: 24px;
     line-height: 1.1em;
@@ -454,7 +454,7 @@ footer p {
 
 .newsletter span i {
     color: var(--afro-red);
-    padding-left: 10px;
+    padding-left: var(--small);
 }
 
 .newsletter-form {
@@ -485,7 +485,7 @@ footer p {
     border-color: transparent;
     padding: 4px 8px;
     color: var(--afro-black);
-    margin-left: 10px;
+    margin-left: var(--small);
 }
 
 .newsletter-form button:hover {
@@ -516,18 +516,16 @@ footer p {
     right: 0px; 
     width: 100%;
     height: 100vh;
-    
-    
+    z-index: 1000; 
+
     display: none; 
 
     background-color: var(--afro-black);
     color: var(--afro-yellow);
-    z-index: 1000;    
 }
 
 .menu-pop-up nav {
     height: 100%;
-
     padding-top: var(--height-header-mob);
 
     /*flex*/
@@ -553,14 +551,12 @@ footer p {
     color: rgb(255, 255, 73);
 }
 
-
 /* Reglas Especificas */
 
 /* Hero - Home */
 .hero {
     display: flex; 
     flex-direction: column-reverse;
-    
 }
 
 .hero > .section-text {
@@ -588,7 +584,6 @@ footer p {
     color: var(--afro-black);
     border-bottom: var(--border);
     padding: var(--padding-section);
-    
      
     /* Flex */
     display: flex; 
@@ -597,7 +592,7 @@ footer p {
 
 .section-text h1{
     order: 2; 
-    padding-top: 10px; 
+    padding-top: var(--small); 
 }
 
 .section-text h5{
@@ -605,9 +600,8 @@ footer p {
 }
 
 .section-text p {
-    padding-bottom: 6%;
+    padding-bottom: var(--medium);
 }
-
 
 /* Sección con fondo negro */
 .section-black {
@@ -617,11 +611,11 @@ footer p {
 }
 
 .section-black h2, .section-black div {
-    padding-bottom: 4%;
+    padding-bottom: var(--medium);
 }
 
 .section-black h1 {
-    padding-bottom: 2%;
+    padding-bottom: var(--small);
 }
 
 .section-black img {
@@ -629,7 +623,6 @@ footer p {
     display: block; 
     padding-top: 4%;
 }
-
 
 /* Sección con texto grande */
 .section-big-text {
@@ -653,7 +646,7 @@ footer p {
     width: 50%;
     border: var(--border);
     border-right: 0px; 
-    padding: 2%;
+    padding: var(--small);
 
     /*flex*/
     display: flex;
@@ -664,7 +657,7 @@ footer p {
 
 .card div:first-child {
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: var(--small);
 
     /*flex*/ 
     justify-content: space-between;
@@ -684,7 +677,7 @@ footer p {
 }
 
 .card div:first-child span:first-child {
-    padding: 1%; 
+    padding: var(--xsmall); 
     border: var(--border);    
 }
 
@@ -696,7 +689,7 @@ footer p {
 .card img {
     width: 100%;
     border: var(--border);
-    margin: 10px 0px;  
+    margin: var(--small) 0px;  
 }
 
 .card img:last-child {
@@ -726,7 +719,7 @@ footer p {
 }
 
 .titular-section h3 {
-    padding-bottom: 0px;
+    padding-bottom: 0;
 }
 
 /* Sección Equipo */
@@ -738,7 +731,7 @@ footer p {
     color: var(--afro-yellow);
     border-top: var(--border);
     border-color: var(--afro-yellow);
-    padding: 2% 0;
+    padding: var(--medium) 0;
     cursor: var(--cursor);
 }
 
@@ -750,7 +743,7 @@ footer p {
 .card-equipo > .big-text{
     font-size: 2em;
     text-align: start;
-    padding-bottom: 2%;
+    padding-bottom: var(--small);
 }
 
 .hover-img {
@@ -802,7 +795,7 @@ footer p {
 
 .panel {
     min-height: 100vh;
-    padding-top: 10%; 
+    padding-top: var(--large); 
 
     /* Flex */
     display: flex;
@@ -831,7 +824,7 @@ footer p {
 }
 
 .card-ayuda > div {
-    padding: 4%;
+    padding: var(--medium);
     width: 100%;
     border-top: var(--border);
     /*flex*/
@@ -883,7 +876,7 @@ footer p {
     background-color: var(--afro-yellow);
     padding: 20px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: var(--medium);
     border: var(--border);
     border-radius: 0;
 }
@@ -920,7 +913,7 @@ footer p {
 
 .section-form input:last-child {
     width: fit-content;
-    margin-right: 10px;
+    margin-right: var(--small);
 
     /* Tamaño del checkbox */
     padding: 8px;
@@ -951,6 +944,7 @@ footer p {
   background-repeat: no-repeat;
   transition: all 0.3s ease-in-out;
 }
+
 .mycheck:checked {
   background-color: var(--afro-yellow);
   color: var(--afro-yellow);
@@ -963,78 +957,11 @@ footer p {
     margin-top: var(--height-header-mob);
 }
 
-/* .card-actividad {
-    background-color: var(--afro-yellow);
-    padding: 2%;
-    border: var(--border);
-    margin-bottom: 10%;
-
-    /*flex
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    & div:first-child {
-        width: 100%;
-        /*flex
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-
-            & span {
-                font-family: var(--main-font);
-                text-transform: uppercase;
-            }
-
-            & span:first-child {
-                padding: 1%;
-                background-color: var(--afro-light-purple);
-                border: var(--border);
-            }
-
-            & span:last-child i {
-                padding-right: 4px;
-                color: var(--afro-purple);
-            }
-        }
-
-        & img {
-            width: 100%;
-            object-fit: cover;
-            margin: 20px 0;
-            border: var(--border);
-        }
-
-        & div:last-child > div {
-            flex-direction: column;
-        }
-
-        & div:last-child > div > div:last-child {
-            padding-top: 20px;
-        
-            /*flex
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
-
-            & span {
-                font-family: var(--main-font);
-                font-size: 5vw;
-                padding: 1%;
-                border: var(--border);
-                color: var(--afro-yellow);
-                background-color: var(--afro-black);
-            }
-        }
-} */
-
 .card-actividad {
     background-color: var(--afro-yellow);
     padding: 2%;
     border: var(--border);
-    margin-bottom: 10%;
+    margin-bottom: var(--large);
 
     /*flex*/
     display: flex;
@@ -1057,7 +984,7 @@ footer p {
 }
 
 .card-actividad div:first-child span:first-child {
-    padding: 1%;
+    padding: var(--xsmall);
     background-color: var(--afro-light-purple);
     border: var(--border);
 }
@@ -1070,7 +997,7 @@ footer p {
 .card-actividad img {
     width: 100%;
     object-fit: cover;
-    margin: 20px 0;
+    margin: var(--medium) 0;
     border: var(--border);
 }
 
@@ -1079,7 +1006,7 @@ footer p {
 }
 
 .card-actividad div:last-child > div > div:last-child {
-    padding-top: 20px;
+    padding-top: var(--medium);
 
     /*flex*/
     display: flex;
@@ -1092,7 +1019,7 @@ footer p {
     font-family: var(--main-font);
     font-size: 5vw;
     text-transform: uppercase;
-    padding: 1%;
+    padding: var(--xsmall);
     border: var(--border);
     color: var(--afro-yellow);
     background-color: var(--afro-black);
@@ -1186,7 +1113,7 @@ footer p {
 
     /* Footer - Desk */
     .top-footer {
-        padding: 3%; 
+        padding: var(--medium); 
     
         /*flex*/
         display: flex;
@@ -1205,20 +1132,20 @@ footer p {
     
     .top-footer img {
         width: 25%;
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
 
     .top-footer p {
         font-size: 24px;
-        padding-bottom: 20px;
+        padding-bottom: var(--medium);
     }
 
     .rrss {
-        padding-bottom: 20px;
+        padding-bottom: var(--medium);
     }
 
     .rrss p {
-        padding-bottom: 0px;
+        padding-bottom: 0;
     }
 
     .rrss img {
@@ -1226,7 +1153,7 @@ footer p {
     }
 
     .buttom-footer {
-        padding: 1%;
+        padding: var(--xsmall);
 
         /*flex*/
         display: flex;
@@ -1240,22 +1167,22 @@ footer p {
     }
 
     .buttom-footer a {
-        padding-right: 20px; 
+        padding-right: var(--medium); 
     }
 
     .buttom-footer a:last-child {
-        padding-right: 0px; 
+        padding-right: 0; 
     }
 
     .buttom-footer p {
-        padding: 0px;
+        padding: 0;
         font-size: 14px;
     }
 
     /* Newsletter - Desk */
     .newsletter {
         width: 35%; 
-        padding: 1%;
+        padding: var(--xsmall);
     }
 
     /* Hero - Desk */
@@ -1299,7 +1226,7 @@ footer p {
 
     /* Sección Fondo Negro - Desk */
    .section-black {
-        padding: 0px;
+        padding: 0;
         height: 100vh;
         margin-top: var(--height-header-desk);
         /*flex*/
@@ -1328,7 +1255,7 @@ footer p {
     }
 
     .card img {
-        margin: 20px 0px;  
+        margin: var(--small) 0;  
     }
 
     .card img:last-child {
@@ -1342,6 +1269,8 @@ footer p {
 
     /* Sección Cards Equipo - Desk */
     .card-equipo {
+        padding: var(--small) 0;
+
         /*flex*/
         display: flex;
         justify-content: center;
@@ -1422,7 +1351,7 @@ footer p {
     }
 
     .card-ayuda > div {
-        padding: 2%;
+        padding: var(--small);
         border-left: var(--border);
         border-top: 0; 
     }
@@ -1451,8 +1380,8 @@ footer p {
 
     /* Sección Actividades - Desk */
     .card-actividad {
-        padding: 1%;
-        margin-bottom: 4%;
+        padding: var(--xsmall);
+        margin-bottom: var(--medium);
     }
 
     .card-actividad div:first-child span:first-child {
@@ -1460,7 +1389,7 @@ footer p {
     }
 
     .card-actividad div:last-child {
-        padding-top: 1%;
+        padding-top: var(--xsmall);
         
         /*flex*/
         display: flex;
@@ -1476,7 +1405,7 @@ footer p {
 
     .card-actividad div:last-child div {
         width: 100%;
-        padding: 2%;
+        padding: var(--small);
             
         justify-content: space-between;
     }
@@ -1491,49 +1420,6 @@ footer p {
     
 }
 
-    /* .card-actividad {
-        padding: 1%;
-        margin-bottom: 4%;
 
-        & div:first-child {
-            
-                & span:first-child {
-                    padding: 0.5%;
-                }
-
-            }
-
-            & div:last-child {
-                padding-top: 1%;
-        
-                /*flex
-                display: flex;
-
-                /* ¡Para que ocupe todo el espacio disponible! 
-                align-items: stretch;
-
-                & img {
-                    margin: 0;
-                    width: 40%;
-                }
-
-                & div {
-                    width: 100%;
-                    padding: 2%;
-            
-                    justify-content: space-between;
-                }
-
-                & div > div {
-                    padding: 0;
-                }
-            }
-
-            & div:last-child > div > div:last-child {
-                & span {
-                    font-size: 1.5vw;
-                }
-            }
-    } */
 
   

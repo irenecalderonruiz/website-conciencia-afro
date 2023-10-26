@@ -1,3 +1,6 @@
+// Efecto de hover con imagen al pasar el cursor por contenedor
+// Para conseguir que funcionara tuve que modificar la estructura en html y cambiar las clases
+
 let container = document.querySelector('.container');
 let img = container.querySelector('.hover-img');
 

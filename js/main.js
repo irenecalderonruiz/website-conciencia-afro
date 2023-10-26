@@ -1,6 +1,6 @@
 $(document).ready(function (){
 
-    // Abrir Pop-up solo en página de inicio
+    // Abrir Pop-up Newsletter solo en página de inicio
     if ($('body').hasClass('home-page')) {
         // Mostrar el pop-up automáticamente en la página de inicio
         $('#ModalNewsletter').show();
@@ -20,7 +20,7 @@ $(document).ready(function (){
 		$("#ModalNewsletter").show();  
 	});
 
-    // Abrir Menu
+    // Abrir Menu y conseguir efecto de cross icon
     var cont_menu = 0;
 	$("#btn_menu").click(function() {
 		if (cont_menu == 0) {
@@ -54,7 +54,7 @@ $(document).ready(function (){
         }
     });
 
-    // Cambio de bg cuando clic en item de menu
+    // Cambio de background al hacer hover en item de menu
         // Aparecer fondos
     $("#item-1").mouseenter(function() {
         $(".menu-pop-up").addClass('bg-img-1');
@@ -69,7 +69,7 @@ $(document).ready(function (){
         $(".menu-pop-up").addClass('bg-img-4');
     });
 
-        // Quitar fondos 
+        // Quitar backgrounds 
     $("#item-1").mouseleave(function() {
         $(".menu-pop-up").removeClass('bg-img-1');
     });
