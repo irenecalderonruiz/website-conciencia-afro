@@ -36,11 +36,11 @@
     --afro-green: #89FC59; 
     --afro-light-green: #A7D992;
 
-
     /* Valores comunes */
 
     /* Alto del header */
     --height-header-mob: 48px;
+    --height-header-tablet: 62px; 
     --height-header-desk: 68px;
 
 
@@ -222,13 +222,6 @@ h6{
     font-family: var(--main-font);
     font-size: 3vw; 
     text-transform: uppercase;
-}
-
-.item-menu {
-    font-family: var(--main-font); 
-    font-size: 24px; 
-    text-transform: uppercase;
-    color: var(--afro-yellow); 
 }
 
 /* Botón */
@@ -540,7 +533,7 @@ footer p {
 .menu-pop-up a {
     font-family: var(--main-font);
     text-transform: uppercase;
-    font-size: 1.6em;
+    font-size: 5vw;
     color: var(--afro-yellow);
     display: block;
     text-align: center;
@@ -626,6 +619,7 @@ footer p {
 
 /* Sección con texto grande */
 .section-big-text {
+    height: 50vh;
     padding: var(--padding-section);
     text-align: center;
 
@@ -643,9 +637,10 @@ footer p {
 }
 
 .card {
-    width: 50%;
+    width: 100%;
     border: var(--border);
-    border-right: 0px; 
+    border-right: 0px;
+    border-bottom: 0;
     padding: var(--small);
 
     /*flex*/
@@ -653,6 +648,10 @@ footer p {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+}
+
+.card-vacia {
+    display: none;
 }
 
 .card div:first-child {
@@ -741,7 +740,7 @@ footer p {
 }
 
 .card-equipo > .big-text{
-    font-size: 2em;
+    font-size: 7vw;
     text-align: start;
     padding-bottom: var(--small);
 }
@@ -834,6 +833,7 @@ footer p {
 }
 
 .titulo-precio{
+    font-size: 3vw;
 
     /*flex*/
     display: flex;
@@ -841,8 +841,10 @@ footer p {
 }
 
 .titulo-precio h4 {
-    display: block;
     width: 50%;
+    font-size: 5vw;
+    display: block;
+    
     padding-bottom: 0;
 }
 
@@ -886,7 +888,7 @@ footer p {
 }
 
 .section-form input::placeholder {
-    font-size: 20px;
+    font-size: 16px;
     font-family: var(--main-font-light);
     color: var(--afro-black);
 }
@@ -980,6 +982,7 @@ footer p {
 
 .card-actividad div:first-child span {
     font-family: var(--main-font);
+    font-size: 3vw;
     text-transform: uppercase;
 }
 
@@ -1029,8 +1032,119 @@ footer p {
     background-color: var(--afro-light-green);
 }
 
-
 /* Responsive */
+
+/* Responsive Tablet iPad Mini - iPad Pro */
+@media all and (min-width:768px){
+    /* Tipografía - Tablet */
+    p, li {
+        font-size: 2.5vw;
+    }
+
+    h1 {
+        font-size: 5vw; 
+    }
+    
+    h2 {
+        font-size: 6vw;
+    }
+    
+    h4 {
+        font-size: 3vw;
+        padding-bottom: var(--small); 
+    }
+    
+    h5 {
+        font-size: 4vw;
+    }
+    
+    /* Botón - tablet*/
+    .btn {
+        font-size: 24px; 
+        padding: 3px 15px;
+    }
+
+    /* Header - tablet */
+    header {
+        height: var(--height-header-tablet);
+    }
+
+    .logo img {
+        width: 44px; 
+    } 
+
+    .btn-cta {
+        font-size: 24px;
+        padding: 16px;
+    }
+
+    /* Footer - tablet */
+    .top-footer p {
+        font-size: 3vw;
+    }
+
+    /* Newsletter - tablet */
+
+    .newsletter {
+        width: 50%; 
+    }
+
+     /* Card - tablet */
+    .card {
+        width: 50%;
+     }
+
+    .card-vacia {
+        display: block;
+    }
+
+    .card span {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    /* Card - equipo - tablet */
+    .card-equipo > .big-text{
+        font-size: 6vw;
+    }
+
+    /* Card - actividades - tablet */
+    .card-actividad div:last-child > div > div:last-child {
+        padding-top: var(--small);
+    }
+
+    /* Ayuda - Tablet */
+    .panel {
+        gap: 30px;
+    }
+
+    .panel h2 {   
+        width: 70%; 
+    }
+
+    .card-ayuda { 
+        width: 50%;
+    }
+
+    .titulo-precio{
+        font-size: 2vw;
+    }
+
+    .titulo-precio h4 {
+        font-size: 4vw;
+    }
+
+    /* Formulario */
+    .section-form input::placeholder {
+        font-size: 20px;
+    }
+
+}
+
+/* Responsive Desktop */
 @media all and (min-width:1025px) {
 
     /* Tipografía - Desk*/
@@ -1278,7 +1392,7 @@ footer p {
     }
     
     .card-equipo > .big-text{
-        font-size: 3em;
+        font-size: 3vw;
         display: block; 
         width: 40%;
     }
@@ -1356,9 +1470,13 @@ footer p {
         border-top: 0; 
     }
 
-    .titulo-precio span {
-        font-size: 4em;
-    }
+   .titulo-precio {
+        font-size: 1vw;
+   }
+
+   .titulo-precio h4 {
+        font-size: 2vw;
+   }
     
     /* Sección Formulario Contacto - desk */
     .form {
@@ -1386,6 +1504,11 @@ footer p {
 
     .card-actividad div:first-child span:first-child {
         padding: 0.5%;
+        font-size: 1.2vw;
+    }
+
+    .card-actividad div:first-child span:last-child {
+        font-size: 1.2vw;
     }
 
     .card-actividad div:last-child {
