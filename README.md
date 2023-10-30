@@ -2,7 +2,7 @@
 
 ### 💻 Description
 
-This website is a web redesign of <a href="https://www.conciencia-afro.com/" target="_blank">conciencia-afro.com</a>. This is a final project of the course "Web Design with HTML5, CSS3 and JavaScript" at CEI: Escuela de Diseño y Marketing. 
+This website is a web redesign of <a href="https://www.conciencia-afro.com/" target="_blank">conciencia-afro.com</a>. This is the final project of the course "Web Design with HTML5, CSS3 and JavaScript" at CEI: Escuela de Diseño y Marketing. 
 
 Conciencia Afro is fully responsive website, for all devices, built using HTML5, CSS3 and JavaScript.
 
