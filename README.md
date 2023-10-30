@@ -7,8 +7,8 @@ This website is a web redesign of <a href="https://www.conciencia-afro.com/" tar
 Conciencia Afro is fully responsive website, for all devices, built using HTML5, CSS3 and JavaScript.
 
 
-▶️ <a href="https://irenecalderonruiz.github.io/website-conciencia-afro/" target="_blank" style="text-align:center"><b> Live Demo</b></a>    
+▶️ <a href="https://irenecalderonruiz.github.io/website-conciencia-afro/"><b> Live Demo</b></a>    
 
 ### ✉️ Contact 
 
-If you want to contact with me you can reach me by <a href="mailto:irenecalderonruiz@gmail.com">Email</a> or by my <a href="https://irenecalderonruiz.com/">website</a>. 
+If you want to contact with me you can reach me by <a href="mailto:irenecalderonruiz@gmail.com">email</a> or by my <a href="https://irenecalderonruiz.com/">website</a>. 
